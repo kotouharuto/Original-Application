@@ -343,7 +343,7 @@
                 <td><?=htmlspecialchars($row['menu'], ENT_QUOTES)?></td>
                 <td><?=htmlspecialchars($row['num'], ENT_QUOTES)?></td>
                 <td><?=htmlspecialchars($row['setnum'], ENT_QUOTES)?></td>
-                <td><a href="tablescr.php?action=delete&id=<?=htmlspecialchars($row['id'], ENT_QUOTES)?>" class="complate">完了</a></td>
+                <td><a href="menupost.php?action=delete&id=<?=htmlspecialchars($row['id'], ENT_QUOTES)?>" class="complate">完了</a></td>
             </tr>
         </tbody>
     <?php
@@ -410,9 +410,9 @@
         <div class="head">
         <h2>メニューを追加しましょう！</h2>
         </div>
-        <input type="text" name="menu" placeholder="トレーニングメニュー" required /><br />
+        <input type="text" name="menu" placeholder="トレーニングメニュー"/><br />
         <input type="number" name="num" placeholder="回数(半角数字で入力してください)">
-        <input  type="number" name="setnum" placeholder="セット数(半角数字で入力してください)" required /><br />
+        <input  type="number" name="setnum" placeholder="セット数(半角数字で入力してください)"/><br />
         <div class="message">追加</div>
         <button id="submit" type="submit">追加</button>
     </div>
