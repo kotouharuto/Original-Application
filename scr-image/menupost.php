@@ -25,7 +25,7 @@
     -moz-border-radius:6px;
     border-radius:6px;
     background-color:#FAFAFA;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     }
     .head {
     -webkit-border-radius:6px 6px 0px 0px;
@@ -151,6 +151,7 @@
         }
         .title {
             text-align: center;
+            letter-spacing: 3px;
         }
 
         .box {
@@ -163,7 +164,7 @@
             position: fixed;
             width: 100%;
             height: 50px;
-            background: #F8F8FF;
+            background: #F5F5F5;
         }
 
         h1 {
@@ -171,31 +172,10 @@
             width: 10000px;
             height: 100px;
             text-align: center;
+            letter-spacing: 1px;
             /* position: relative;
             display: inline-block;
             margin-bottom: 1em; */
-        }
-        
-        /* h1:before {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            display: inline-block;
-            width: 60px;
-            height: 5px;
-            left: 50%;
-            -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-            background-color: black;
-            border-radius: 2px;
-        } */
-
-        .title {
-            padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
-            color: #494949;/*文字色*/
-            background: #f4f4f4;/*背景色*/
-            border-left: solid 5px #7db4e6;/*左線*/
-            border-bottom: solid 3px #d7d7d7;/*下線*/
         }
         
         .todo {
@@ -265,14 +245,13 @@
             position: fixed;
             left: 0;
             bottom: 0;
-            background: gray;
-            opacity: 0.6;
+            background: #F5F5F5;
         }
 
         .nav-item a span {
             display: block;
             font-size: 15px;
-            color: white;
+            color: black;
             opacity: 1 !important;
         }
 
@@ -286,11 +265,85 @@
 
         .nowtitle {
             font-size: 30px;
+            font-weight: normal;
             margin: 0 auto;
+            font-family: ;
         }
 
         .addurl {
             text-align: center;
+        }
+
+    @media (min-width:1131px) {
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 50px;
+            z-index: 10000;
+        }
+
+        .nav-item i {
+            display: block;
+            font-size: 24px;
+        }
+
+        .nav-list {
+            display: table;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        .nav-item {
+        display: table-cell;
+        /* padding: 2px 0px; */
+        }
+
+        .nav-list {
+            table-layout: fixed;
+            width: 100%;
+        }
+
+        .nav-list {
+            border-collapse: collapse;
+        }
+
+        .nav-item {
+        }
+
+        .navline {
+            background: gray;
+            width: 100%;
+            height: 1px;
+        }
+
+        .global-nav {
+            position: fixed;
+            left: 0;
+            /* bottom: 0; */
+            background: #F5F5F5;
+        }
+
+        .nav-item a span {
+            display: block;
+            font-size: 15px;
+            color: black;
+            opacity: 1 !important;
+        }
+
+        h1 {
+            font-size: 35px;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 27px;
+            position: relative;
+            bottom: 30px;
+        }
+
+        .nowtitle {
+            font-size: 0px;
         }
     }
 </style>
@@ -301,15 +354,16 @@
 <body>
     <div class="box"></div>
     <header>
-        <h1 class="nowtitle">筋トレ</h1><hr>
+        <h1 class="nowtitle">筋トレ</h1>
     </header>
 
     <div id="wrapper">
-        
-    <h2 class="title mt-3">〇〇日の筋トレ</h1>   
+
+    <h2 class="title mt-3">〇〇日の筋トレ</h2>   
 
     <?php
     require_once "dbconnect.php";
+    $pdo = db_connect();
     
     //データ取得
     $sql = "SELECT * FROM trainingmenu WHERE 1";
@@ -317,10 +371,10 @@
     $stmh->execute();
     ?>
 
-    <table class="table table-hover">
+    <table class="table table-hover mt-5">
     <thead>
          <tr>
-         <th scope="col">#</th>
+         <th scope="col"></th>
          <th scope="col">メニュー</th>
          <th scope="col">回数</th>
          <th scope="col">セット数</th>
@@ -343,34 +397,39 @@
                 <td><?=htmlspecialchars($row['menu'], ENT_QUOTES)?></td>
                 <td><?=htmlspecialchars($row['num'], ENT_QUOTES)?></td>
                 <td><?=htmlspecialchars($row['setnum'], ENT_QUOTES)?></td>
-                <td><a href="menupost.php?action=delete&id=<?=htmlspecialchars($row['id'], ENT_QUOTES)?>" class="complate">完了</a></td>
+                <td><a href="menupost.php?action=delete&id=<?=htmlspecialchars($row['id'], ENT_QUOTES)?>" class="complate" name="delete">完了</a></td>
             </tr>
         </tbody>
     <?php
     }
 
     //削除処理
-    if(isset($_GET['action']) && $_GET['action'] == 'delete' && $_GET['id'] > 0) {
-        try {
-            $pdo->beginTransaction();
-            $id = $_GET['id'];
-            $sql = "DELETE FROM trainingmenu WHERE id = :id";
-            $stmh = $pdo->prepare($sql);
-            $stmh->bindValue(':id', $id, PDO::PARAM_INT);
-            $stmh->execute();
-            $pdo->commit();
-        } catch(PDOException $Exception) {
-            $pdo->rollBack();
-            print 'エラー：'. $Exception->getMessage();
-            
+    function DELETE() {
+        $pdo = db_connect();
+        if(isset($_GET['action']) && $_GET['action'] == 'delete' && $_GET['id'] > 0) {
+            try {
+                $pdo->beginTransaction();
+                $id = $_GET['id'];
+                $sql = "DELETE FROM trainingmenu WHERE id = :id";
+                $stmh = $pdo->prepare($sql);
+                $stmh->bindValue(':id', $id, PDO::PARAM_INT);
+                $stmh->execute();
+                $pdo->commit();
+            } catch(PDOException $Exception) {
+                $pdo->rollBack();
+                print 'エラー：'. $Exception->getMessage();
+                
+            }
         }
+        return $pdo;
     }
+    DELETE();
     ?>
     </table>
     
     <!-- ナビ -->
     <nav class="global-nav">
-        <div class="navline"></div>
+        <!-- <div class="navline"></div> -->
         <ul class="nav-list">
             <li class="nav-item">
                 <a href="#">
@@ -411,8 +470,8 @@
         <h2>メニューを追加しましょう！</h2>
         </div>
         <input type="text" name="menu" placeholder="トレーニングメニュー"/><br />
-        <input type="number" name="num" placeholder="回数(半角数字で入力してください)">
-        <input  type="number" name="setnum" placeholder="セット数(半角数字で入力してください)"/><br />
+        <input type="number" name="num" placeholder="回数or秒数" />
+        <input  type="number" name="setnum" placeholder="セット数"/><br />
         <div class="message">追加</div>
         <button id="submit" type="submit">追加</button>
     </div>
@@ -422,8 +481,6 @@
 </html>
 <?php
 require_once "dbconnect.php";
-
-//問題点：このページを開いたらデータベースに空のデータを送信してしまう。
 
 
 ?>
