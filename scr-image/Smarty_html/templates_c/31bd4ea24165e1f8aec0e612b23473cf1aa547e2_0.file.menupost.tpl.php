@@ -1,12 +1,39 @@
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2020-08-05 09:04:38
+  from '/Applications/MAMP/htdocs/Original-Application/scr-image/Smarty_html/templates/menupost.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_5f2a76261790d6_03146236',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '31bd4ea24165e1f8aec0e612b23473cf1aa547e2' => 
+    array (
+      0 => '/Applications/MAMP/htdocs/Original-Application/scr-image/Smarty_html/templates/menupost.tpl',
+      1 => 1596618276,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5f2a76261790d6_03146236 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html lang="ja">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+crossorigin="anonymous">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
-    crossorigin="anonymous">
+<title>筋トレメニュー</title>
 
 <style>
     body {
@@ -349,86 +376,69 @@
 </style>
 
 </head>
-<body>
+
+
 
 <body>
-    <div class="box"></div>
-    <header>
-        <h1 class="nowtitle">筋トレ</h1>
-    </header>
+<div class="box"></div>
+<header>
+    <h1 class="nowtitle">筋トレ</h1>
+</header>
 
-    <div id="wrapper">
+<div id="wrapper">
 
-    <h2 class="title mt-3">〇〇日の筋トレ</h2>   
+<h2 class="title mt-3">〇〇日の筋トレ</h2>
 
-    <?php
-    require_once "dbconnect.php";
-    $pdo = db_connect();
-    
-    //データ取得
-    $sql = "SELECT * FROM trainingmenu WHERE 1";
-    $stmh = $pdo->prepare($sql);
-    $stmh->execute();
-    ?>
-
-    <table class="table table-hover mt-5">
+<table class="table table-hover mt-5">
     <thead>
-         <tr>
-         <th scope="col"></th>
-         <th scope="col">メニュー</th>
-         <th scope="col">回数</th>
-         <th scope="col">セット数</th>
-         <th></th>
-         </tr>
+        <tr>
+        <th scope="col"></th>
+        <th scope="col">メニュー</th>
+        <th scope="col">回数</th>
+        <th scope="col">セット数</th>
+        <th></th>
+        </tr>
      </thead>
-     <?php
 
-     //データ表示処理
-    while(1) {
-        $row = $stmh->fetch(PDO::FETCH_ASSOC);
-        if($row == false) 
-        {
-            break;
-        }
-        ?>
+</table>
+
+<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['menus']->value, 'row');
+$_smarty_tpl->tpl_vars['row']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
+$_smarty_tpl->tpl_vars['row']->do_else = false;
+?>
         <tbody>
             <tr>
                 <td></td>
-                <td><?=htmlspecialchars($row['menu'], ENT_QUOTES)?></td>
-                <td><?=htmlspecialchars($row['num'], ENT_QUOTES)?></td>
-                <td><?=htmlspecialchars($row['setnum'], ENT_QUOTES)?></td>
-                <td><a href="menupost.php?action=delete&id=<?=htmlspecialchars($row['id'], ENT_QUOTES)?>" class="complate" name="delete">完了</a></td>
+                <td><?php echo $_smarty_tpl->tpl_vars['row']->value['menu'];?>
+</td>
+                <td><?php echo $_smarty_tpl->tpl_vars['row']->value['num'];?>
+</td>
+                <td><?php echo $_smarty_tpl->tpl_vars['row']->value['setnum'];?>
+</td>
+                <td><a href="menupost.php?action=delete&id=<?php echo $_smarty_tpl->tpl_vars['row']->value['id'];?>
+" class="complate" name="delete">完了</a></td>
             </tr>
         </tbody>
-    <?php
-    }
+<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
-    //削除処理
-    function DELETE() {
-        $pdo = db_connect();
-        if(isset($_GET['action']) && $_GET['action'] == 'delete' && $_GET['id'] > 0) {
-            try {
-                $pdo->beginTransaction();
-                $id = $_GET['id'];
-                $sql = "DELETE FROM trainingmenu WHERE id = :id";
-                $stmh = $pdo->prepare($sql);
-                $stmh->bindValue(':id', $id, PDO::PARAM_INT);
-                $stmh->execute();
-                $pdo->commit();
-            } catch(PDOException $Exception) {
-                $pdo->rollBack();
-                print 'エラー：'. $Exception->getMessage();
-                
-            }
-        }
-        return $pdo;
-    }
-    DELETE();
-    ?>
-    </table>
-    
-    <!-- ナビ -->
-    <nav class="global-nav">
+<form  action="Confirmation.php" id="contact" method="post">
+    <div class="container">
+        <div class="head">
+        <h2>メニューを追加しましょう！</h2>
+        </div>
+        <input type="text" name="menu" placeholder="トレーニングメニュー"/><br />
+        <input type="number" name="num" placeholder="回数or秒数" />
+        <input  type="number" name="setnum" placeholder="セット数"/><br />
+        <div class="message">追加</div>
+        <button id="submit" type="submit">追加</button>
+    </div>
+</form>
+
+<nav class="global-nav">
         <!-- <div class="navline"></div> -->
         <ul class="nav-list">
             <li class="nav-item">
@@ -464,23 +474,7 @@
     </nav>
 
 
-    <form  action="Confirmation.php" id="contact" method="post">
-    <div class="container">
-        <div class="head">
-        <h2>メニューを追加しましょう！</h2>
-        </div>
-        <input type="text" name="menu" placeholder="トレーニングメニュー"/><br />
-        <input type="number" name="num" placeholder="回数or秒数" />
-        <input  type="number" name="setnum" placeholder="セット数"/><br />
-        <div class="message">追加</div>
-        <button id="submit" type="submit">追加</button>
-    </div>
-    </form>
 
 </body>
-</html>
-<?php
-require_once "dbconnect.php";
-
-
-?>
+</html><?php }
+}

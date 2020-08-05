@@ -1,4 +1,4 @@
---usersテーブル
+-- usersテーブル
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
@@ -6,7 +6,7 @@ CREATE TABLE `users` (
   `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---tweetテーブル
+-- tweetテーブル
 CREATE TABLE `tweet` (
   `id` int(11) NOT NULL,
   `tweet_id` int(11) NOT NULL,
@@ -16,28 +16,28 @@ CREATE TABLE `tweet` (
   `deleted` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---トレーニングメニューテーブル
+-- トレーニングメニューテーブル
 CREATE TABLE `trainingmenu` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL ,
   `menu` varchar(100) DEFAULT NULL,
   `num` varchar(1000) DEFAULT NULL,
   `setnum` varchar(1000) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---いいねテーブル
+-- いいねテーブル
 CREATE TABLE `good` (
   `id` int(11) DEFAULT NULL,
   `user_id` int(11) NOT NULL,
   `tweet_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---followテーブル
+-- followテーブル
 CREATE TABLE `follow` (
   `following_id` int(11) NOT NULL,
   `followed_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---commentテーブル
+-- commentテーブル
 CREATE TABLE `comment` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,

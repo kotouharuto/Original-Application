@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+    crossorigin="anonymous">
+</head>
+
+<style>
+
+    body {
+        height: 500px;
+    }
+    .title {
+        text-align: center;
+    }
+    
+    .todo {
+        display: flex;
+        color: #2d8fdd;
+        border-left: solid 6px #2d8fdd;/*左側の線*/
+        background: #f1f8ff;/*背景色*/
+        margin-bottom: 3px;/*下のバーとの余白*/
+        line-height: 1.5;
+        padding: 0.5em;
+        list-style-type: none!important;/*ポチ消す*/
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    form {
+            background: #c1bebe;
+            width: 60%;
+            height: 20%;
+        }
+
+
+        addtore {
+            width: 200%;
+            position: relative;
+        }
+
+        .toreinfo {
+            font-size: 20px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .toreform {
+            width: 90%;
+            text-align: center;
+            
+        }
+
+        .notform {
+            width: 15%;
+            position: relative;
+            left: 5%;
+        }
+        .notinfo {
+            position: relative;
+            left: 5%;
+        }
+
+        .setform {
+            width: 15%;
+            position: relative;
+            left: 35%;
+            bottom: 70px;
+        }
+
+        .setinfo {
+            position: relative;
+            left: 35%;
+            bottom: 70px;
+        }
+
+        button {
+            position: relative;
+            left: 70%;
+            bottom: 100px;
+        }
+
+        .traning {
+            margin: 0 auto;
+        }
+
+        img {
+            
+        }
+
+        main {
+            flex: 1;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        #wrapper {
+            
+        }
+
+        .nav-item i {
+            display: block;
+            font-size: 24px;
+        }
+
+        .nav-item a span {
+            display: block;
+            font-size: 10px;
+        }
+
+        .nav-list {
+            display: table;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        .nav-item {
+        display: table-cell;
+        /* padding: 2px 0px; */
+        }
+
+        .nav-list {
+            table-layout: fixed;
+            width: 100%;
+        }
+
+        .nav-list {
+            border-collapse: collapse;
+        }
+
+        .nav-item {
+        }
+
+        .global-nav {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+        }
+
+        .footer {
+            margin-bottom: 24px;
+        }
+
+        .navline {
+            background: gray;
+            width: 100%;
+            height: 2px;
+        }
+
+        header {
+            display: flex;
+        }
+
+        .nowtitle {
+            font-size: 30px;
+            margin: 0 auto;
+        }
+        
+</style>
+<body>
+    <header>
+        <img src="settiimg.png" class="mt-2 ml-5 mb-2" alt="" width="30px" height="30px">
+        <h1 class="nowtitle">筋トレ</h1>
+    </header>
+    <div class="navline"></div>
+    <div id="wrapper">
+        
+        <h1 class="title mt-3">〇〇日の筋トレ</h1>
+        <div class="todo">
+            <p>メニュー：腹筋　</p>
+            <p>回数：15　</p>
+            <p>セット数：3　</p>
+            <a href="delete.php">完了</a>
+        </div>
+        <p> </p>
+        <div class="todo">
+            <p>メニュー：ダンベルフライ　</p>
+            <p>回数：15　</p>
+            <p>セット数：3　</p>
+            <a href="delete.php">完了</a>
+        </div>
+        <p> </p>
+        <div class="todo">
+            <p>メニュー：ベンチプレス　</p>
+            <p>回数：15　</p>
+            <p>セット数：3　</p>
+            <a href="delete.php">完了</a>
+        </div>
+        <p> </p>
+        <div class="todo">
+            <p>メニュー：プランク　</p>
+            <p>回数：15　</p>
+            <p>セット数：3　</p>
+            <a href="delete.php">完了</a>
+        </div>
+        <p> </p>
+        <div class="todo">
+            <p>メニュー：デクラインプッシュアップ　</p>
+            <p>回数：15　</p>
+            <p>セット数：3　</p>
+            <a href="delete.php">完了</a>
+        </div>
+        
+        <form action="" class="traning mt-5">
+            <div>
+                <p class="toreinfo">どんなトレーニングをしますか？</p>
+                <input type="text" name="tore" class="toreform ml-4" placeholder="メニューを入力してください！">
+            </div>
+            
+            <p class="notinfo">回数</p>
+            <div>
+                <input type="text" class="notform" name="not">
+            </div>
+            
+            <p class="setinfo">セット数</p>
+            <div>
+                <input type="text" class="setform" name="set">
+            </div>
+            
+            <button class="btn btn-primary">追加</button>
+        </form>
+        
+        <nav class="global-nav">
+            <div class="navline"></div>
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a href="#">
+                  <i class="fas fa-home"></i>
+                  <img src="homeimg.png" alt="" width="25%" height="20%">
+                  <span>ホーム</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#">
+                  <i class="fas fa-star"></i>
+                  <img src="danbelimg.png" alt="" width="25%" height="20%">
+                  <span>筋トレ</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#">
+                  <i class="fas fa-history"></i>
+                  <img src="timerimg.jpg" alt="" width="25%" height="20%">
+                  <span>タイマー</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#">
+                  <i class="fas fa-cart-arrow-down"></i>
+                  <img src="SNSimg2.png" alt="" width="25%" height="20%">
+                  <span>SNS</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+    </div>
+    </body>
+</html>

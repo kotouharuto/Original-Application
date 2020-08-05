@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+    crossorigin="anonymous">
+
+    <style>
+        form {
+            background: rgb(193, 190, 190);
+            width: 500px;
+            height: 180px;
+        }
+
+
+        addtore {
+            width: 200%;
+            position: relative;
+        }
+
+        .toreinfo {
+            font-size: 20px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .toreform {
+            width: 90%;
+            text-align: center;
+            
+        }
+
+        .notform {
+            width: 15%;
+            position: relative;
+            left: 5%;
+        }
+        .notinfo {
+            position: relative;
+            left: 5%;
+        }
+
+        .setform {
+            width: 15%;
+            position: relative;
+            left: 35%;
+            bottom: 70px;
+        }
+
+        .setinfo {
+            position: relative;
+            left: 35%;
+            bottom: 70px;
+        }
+
+        button {
+            position: relative;
+            left: 70%;
+            bottom: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="">
+        <div>
+            <p class="toreinfo">どんなトレーニングをしますか？</p>
+            <input type="text" name="tore" class="toreform ml-4" placeholder="メニューを入力してください！">
+        </div>
+
+        <p class="notinfo">回数</p>
+        <div>
+            <input type="text" class="notform" name="not">
+        </div>
+
+        <p class="setinfo">セット数</p>
+        <div>
+            <input type="text" class="setform" name="set">
+        </div>
+
+        <button class="btn btn-primary">追加</button>
+    </form>
+</body>
+</html>

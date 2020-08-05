@@ -380,26 +380,17 @@ crossorigin="anonymous">
 
 </table>
 
-{php}
-while(1) {
-        $row = $stmh->fetch(PDO::FETCH_ASSOC);
-        if($row == false) 
-        {
-            break;
-        }
-{/php}
+{foreach  from=$menus item=$row}
         <tbody>
             <tr>
                 <td></td>
-                <td><?=htmlspecialchars($row['menu'], ENT_QUOTES)?></td>
-                <td><?=htmlspecialchars($row['num'], ENT_QUOTES)?></td>
-                <td><?=htmlspecialchars($row['setnum'], ENT_QUOTES)?></td>
-                <td><a href="menupost.php?action=delete&id=<?=htmlspecialchars($row['id'], ENT_QUOTES)?>" class="complate" name="delete">完了</a></td>
+                <td>{$row.menu}</td>
+                <td>{$row.num}</td>
+                <td>{$row.setnum}</td>
+                <td><a href="menupost.php?action=delete&id={$row.id}" class="complate" name="delete">完了</a></td>
             </tr>
         </tbody>
-    {php}
-    }
-    {/php}
+{/foreach}
 
 <form  action="Confirmation.php" id="contact" method="post">
     <div class="container">

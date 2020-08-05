@@ -1,14 +1,41 @@
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2020-08-04 21:40:37
+  from '/Applications/MAMP/htdocs/Original-Application/scr-image/Smarty_html/templates/menupost.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_5f29d5d557f530_72638613',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '7f5b339d24044e4773552d1dbf7d433cf217cec7' => 
+    array (
+      0 => '/Applications/MAMP/htdocs/Original-Application/scr-image/Smarty_html/templates/menupost.tpl',
+      1 => 1596577237,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5f29d5d557f530_72638613 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
-    crossorigin="anonymous">
 
-<!-- <style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+crossorigin="anonymous">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+<title>筋トレメニュー</title>
+
+<style>
     body {
     padding-top:25px;
     background-color:gray;
@@ -346,88 +373,116 @@
             font-size: 0px;
         }
     }
-</style> -->
+</style>
 
 </head>
+
+
+
 <body>
-<?php
-// ⚪️現在の課題点
-// メニューを追加したら、フォームの下に追加したメニューが表示されてしまう
+<div class="box"></div>
+<header>
+    <h1 class="nowtitle">筋トレ</h1>
+</header>
 
-require_once "dbconnect.php";
-$pdo = db_connect();
-require_once "/Applications/MAMP/bin/php/php7.4.2/lib/php/Smarty/smarty/Smarty.class.php";
+<div id="wrapper">
 
-$smarty = new Smarty();
+<h2 class="title mt-3">〇〇日の筋トレ</h2>
 
-$smarty->cache_dir = "/Applications/MAMP/htdocs/Original-Application/scr-image/Smarty_html/cache";
-$smarty->config_dir = "/Applications/MAMP/htdocs/Original-Application/scr-image/Smarty_html/config";
-$smarty->template_dir = "/Applications/MAMP/htdocs/Original-Application/scr-image/Smarty_html/templates";
-$smarty->compile_dir = "/Applications/MAMP/htdocs/Original-Application/scr-image/Smarty_html/templates_c";
+<table class="table table-hover mt-5">
+    <thead>
+        <tr>
+        <th scope="col"></th>
+        <th scope="col">メニュー</th>
+        <th scope="col">回数</th>
+        <th scope="col">セット数</th>
+        <th></th>
+        </tr>
+     </thead>
 
+</table>
 
-//削除処理
-function DELETE() {
-    $pdo = db_connect();
-    if(isset($_GET['action']) && $_GET['action'] == 'delete' && $_GET['id'] > 0) {
-        try {
-            $pdo->beginTransaction();
-            $id = $_GET['id'];
-            $sql = "DELETE FROM trainingmenu WHERE id = :id";
-            $stmh = $pdo->prepare($sql);
-            $stmh->bindValue(':id', $id, PDO::PARAM_INT);
-            $stmh->execute();
-            $pdo->commit();
-        } catch(PDOException $Exception) {
-            $pdo->rollBack();
-            print 'エラー：'. $Exception->getMessage();
-            
-        }
-    }
-    return $pdo;
-}
-
-DELETE();
-
-//データ取得
-$sql = "SELECT * FROM trainingmenu WHERE 1";
-$stmh = $pdo->prepare($sql);
-$stmh->execute();
-
-$menus = [];
 while(1) {
-    $row = $stmh->fetch(PDO::FETCH_ASSOC);
-    if($row == false)
-    {
-    break;
+        $row = $stmh->fetch(PDO::FETCH_ASSOC);
+        if($row == false) 
+        {
+            break;
+        }
+    <?php echo '?>';?>
+
+        <tbody>
+            <tr>
+                <td></td>
+                <td><?php echo '<?=';?>
+htmlspecialchars($row['menu'], ENT_QUOTES)<?php echo '?>';?>
+</td>
+                <td><?php echo '<?=';?>
+htmlspecialchars($row['num'], ENT_QUOTES)<?php echo '?>';?>
+</td>
+                <td><?php echo '<?=';?>
+htmlspecialchars($row['setnum'], ENT_QUOTES)<?php echo '?>';?>
+</td>
+                <td><a href="menupost.php?action=delete&id=<?php echo '<?=';?>
+htmlspecialchars($row['id'], ENT_QUOTES)<?php echo '?>';?>
+" class="complate" name="delete">完了</a></td>
+            </tr>
+        </tbody>
+    <?php echo '<?php
+    ';?>
 }
-$menus[] = $row;
-}
+    <?php echo '?>';?>
 
-$smarty->assign('menus', $menus);
 
-$smarty->display('menupost.tpl');
+<form  action="Confirmation.php" id="contact" method="post">
+    <div class="container">
+        <div class="head">
+        <h2>メニューを追加しましょう！</h2>
+        </div>
+        <input type="text" name="menu" placeholder="トレーニングメニュー"/><br />
+        <input type="number" name="num" placeholder="回数or秒数" />
+        <input  type="number" name="setnum" placeholder="セット数"/><br />
+        <div class="message">追加</div>
+        <button id="submit" type="submit">追加</button>
+    </div>
+</form>
 
-?>
+<nav class="global-nav">
+        <!-- <div class="navline"></div> -->
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="#">
+                    <i class="fas fa-home"></i>
+                    <img src="homeimg.png" alt="" width="25%" height="20%">
+                    <span>ホーム</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#">
+                  <i class="fas fa-star"></i>
+                  <img src="danbelimg.png" alt="" width="25%" height="20%">
+                  <span>筋トレ</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#">
+                  <i class="fas fa-history"></i>
+                  <img src="timerimg.jpg" alt="" width="25%" height="20%">
+                  <span>タイマー</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#">
+                  <i class="fas fa-cart-arrow-down"></i>
+                  <img src="SNSimg2.png" alt="" width="25%" height="20%">
+                  <span>SNS</span>
+                </a>
+            </li>
+        </ul>
+        </div>
+    </nav>
 
-    <?php
-    require_once "dbconnect.php";
-    $pdo = db_connect();
-    
-    ?>
-    <table class="table table-hover mt-5">
 
-    <?php
-
-     //データ表示処理
-    
-
-    ?>
-    </table>
-    
-
-    
-    
 
 </body>
-</html>
+</html><?php }
+}
