@@ -46,3 +46,4 @@ ALTER TABLE `trainingmenu`
 --
 ALTER TABLE `trainingmenu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+

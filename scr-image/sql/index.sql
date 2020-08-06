@@ -37,6 +37,7 @@ CREATE TABLE `follow` (
   `followed_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
 -- commentテーブル
 CREATE TABLE `comment` (
   `id` int(11) NOT NULL,

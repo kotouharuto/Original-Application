@@ -30,6 +30,7 @@ CREATE TABLE `comment` (
   `deleted` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+  
 --
 -- ダンプしたテーブルのインデックス
 --
