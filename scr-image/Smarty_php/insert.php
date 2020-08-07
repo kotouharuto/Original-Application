@@ -10,6 +10,7 @@ function INSERT() {
         $stmh->bindValue(':setnum', $_POST['setnum'], PDO::PARAM_STR);
         $stmh->execute();
         $pdo->commit();
+        header('Location:menupost.php');
     } catch (PDOException $Exception) {
         $pdo->rollback();
         print  "error：". $Exception->getMessage();
