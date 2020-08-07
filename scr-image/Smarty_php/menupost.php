@@ -11,9 +11,8 @@
 </head>
 <body>
 <?php
-// ⚪️現在の課題点
-// メニューを追加したら、フォームの下に追加したメニューが表示されてしまう
 
+//メニュー挿入ファイル
 require_once "dbconnect.php";
 $pdo = db_connect();
 require_once "/Applications/MAMP/bin/php/php7.4.2/lib/php/Smarty/smarty/Smarty.class.php";

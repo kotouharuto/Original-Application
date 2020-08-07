@@ -1,4 +1,6 @@
 <?php
+
+//挿入処理ファイル
 function INSERT() {
     try {
         $pdo = db_connect();

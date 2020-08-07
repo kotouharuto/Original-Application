@@ -1,5 +1,7 @@
 {* Smarty_html/menupost.tpl *}
 
+{* メニュー表示画面ファイル *}
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -378,7 +380,6 @@ crossorigin="anonymous">
         </tr>
      </thead>
 
-</table>
 
 {foreach  from=$menus item=$row}
         <tbody>
@@ -391,6 +392,7 @@ crossorigin="anonymous">
             </tr>
         </tbody>
 {/foreach}
+</table>
 
 <form  action="Confirmation.php" id="contact" method="post">
     <div class="container">

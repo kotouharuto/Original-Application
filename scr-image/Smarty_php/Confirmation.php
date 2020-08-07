@@ -10,6 +10,8 @@
 </html>
 
 <?php
+
+//データ確認ファイル
 require_once "dbconnect.php";
 
 function EmptNumCheck(){

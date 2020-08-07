@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-05 09:04:38
+/* Smarty version 3.1.34-dev-7, created on 2020-08-07 09:56:57
   from '/Applications/MAMP/htdocs/Original-Application/scr-image/Smarty_html/templates/menupost.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f2a76261790d6_03146236',
+  'unifunc' => 'content_5f2d2569c7c6f3_33374851',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '31bd4ea24165e1f8aec0e612b23473cf1aa547e2' => 
     array (
       0 => '/Applications/MAMP/htdocs/Original-Application/scr-image/Smarty_html/templates/menupost.tpl',
-      1 => 1596618276,
+      1 => 1596794215,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f2a76261790d6_03146236 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f2d2569c7c6f3_33374851 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -400,7 +401,6 @@ crossorigin="anonymous">
         </tr>
      </thead>
 
-</table>
 
 <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['menus']->value, 'row');
@@ -424,6 +424,7 @@ $_smarty_tpl->tpl_vars['row']->do_else = false;
 <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+</table>
 
 <form  action="Confirmation.php" id="contact" method="post">
     <div class="container">

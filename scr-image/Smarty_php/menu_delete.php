@@ -1,5 +1,6 @@
 <?php
 
+//削除処理ファイル
 function DELETE($id) {
     require_once "dbconnect.php";
     $pdo = db_connect();

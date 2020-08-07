@@ -1,4 +1,6 @@
 <?php
+
+//DB接続ファイル
 function db_connect() {
     $db_user = 'root';
     $db_pass = 'root';
