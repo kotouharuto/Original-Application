@@ -388,7 +388,7 @@ crossorigin="anonymous">
                 <td>{$row.menu}</td>
                 <td>{$row.num}</td>
                 <td>{$row.setnum}</td>
-                <td><a href="menu_delete.php?id={$row.id}" class="complate" name="delete">完了</a></td>
+                <td><a href="menu_delete.php?action=delete&id={$row.id}" class="complate" name="delete">完了</a></td>
             </tr>
         </tbody>
 {/foreach}
