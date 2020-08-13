@@ -1,6 +1,27 @@
-{* Smarty_html/login.tpl *}
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2020-08-12 23:44:32
+  from '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/login.tpl' */
 
-{* ログインファイル *}
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_5f347ee0572af8_36730738',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '51d4045802035616488303f93b33800a0976a944' => 
+    array (
+      0 => '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/login.tpl',
+      1 => 1597223187,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5f347ee0572af8_36730738 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -123,4 +144,5 @@ form {
 </button>
 
 </body>
-</html>
+</html><?php }
+}

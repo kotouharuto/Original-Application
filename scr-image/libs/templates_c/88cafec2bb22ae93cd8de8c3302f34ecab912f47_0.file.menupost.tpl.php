@@ -1,6 +1,27 @@
-{* Smarty_html/menupost.tpl *}
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2020-08-12 23:35:04
+  from '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/menupost.tpl' */
 
-{* メニュー表示画面ファイル *}
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_5f347ca8614ba5_48604687',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '88cafec2bb22ae93cd8de8c3302f34ecab912f47' => 
+    array (
+      0 => '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/menupost.tpl',
+      1 => 1597223124,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5f347ca8614ba5_48604687 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -381,17 +402,28 @@ crossorigin="anonymous">
      </thead>
 
 
-{foreach  from=$menus item=$row}
+<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['menus']->value, 'row');
+$_smarty_tpl->tpl_vars['row']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
+$_smarty_tpl->tpl_vars['row']->do_else = false;
+?>
         <tbody>
             <tr>
                 <td></td>
-                <td>{$row.menu}</td>
-                <td>{$row.num}</td>
-                <td>{$row.setnum}</td>
-                <td><a href="menupost.php?action=delete&id={$row.id}" class="complate" name="delete">完了</a></td>
+                <td><?php echo $_smarty_tpl->tpl_vars['row']->value['menu'];?>
+</td>
+                <td><?php echo $_smarty_tpl->tpl_vars['row']->value['num'];?>
+</td>
+                <td><?php echo $_smarty_tpl->tpl_vars['row']->value['setnum'];?>
+</td>
+                <td><a href="menupost.php?action=delete&id=<?php echo $_smarty_tpl->tpl_vars['row']->value['id'];?>
+" class="complate" name="delete">完了</a></td>
             </tr>
         </tbody>
-{/foreach}
+<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </table>
 
 <form  action="Confirmation.php" id="contact" method="post">
@@ -445,4 +477,5 @@ crossorigin="anonymous">
 
 
 </body>
-</html>
+</html><?php }
+}
