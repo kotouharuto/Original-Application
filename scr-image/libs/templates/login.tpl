@@ -53,43 +53,31 @@ form {
     text-decoration: none;
 }
 
-
-
-.loginbtn:hover {
-    opacity: 0.9;
-}
 .newacbox {
     text-align: center;
 }
 
-.newacbox {
-    position: relative;
-    olor: white;
-    height: 40px;
-    background: #FF6666;
-    border-radius: 30px;
-    width: 50%;
-    display: table-cell;
-    vertical-align: middle;
-    margin: 0 auto;
-    text-decoration: none;
-    
-}
-
-.newacbox p {
-    color: white;
-    
-}
 .newacbox a {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height:100%;
-    width: 100%;
+    text-decoration:none;
 }
 
-.newacbox:hover {
+.newacbox a:hover {
+    color: red;
+}
+
+.loginbtn:hover {
     opacity: 0.9;
+}
+
+footer {
+    width: 100%;
+    background-color: #89c7de;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    height: 100px;
+    position: absolute;/*←絶対位置*/
+    bottom: 0; /*下に固定*/
 }
 
 
@@ -108,7 +96,7 @@ form {
         <input type="email">
     </div><br><br>
     <div class="passbox">
-        <p class="forminfo">メールアドレス</p>
+        <p class="forminfo">パスワード</p>
         <input type="password">
     </div><br><br>
 
@@ -116,11 +104,14 @@ form {
         　ログインする　　
     </button><br><br>
 </form>
+<div class="newacbox">
+    <p>アカウントをお持ちでない方はこちらから</p>
+    <a href="newac.php">アカウントを作成する</a>
+</div>
 
-<button class="newacbox">
-  <p>アカウントを作成する</p>
-  <a href="newac.php"></a>
-</button>
+<footer>
+
+</footer>
 
 </body>
 </html>

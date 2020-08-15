@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-14 00:52:46
+/* Smarty version 3.1.34-dev-7, created on 2020-08-14 01:09:59
   from '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f35e05ea85059_96463065',
+  'unifunc' => 'content_5f35e4679161a3_95575096',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '51d4045802035616488303f93b33800a0976a944' => 
+    'd25275d81f069ca5d44fb3602e4258c0129bfed7' => 
     array (
       0 => '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/login.tpl',
-      1 => 1597366366,
+      1 => 1597367398,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f35e05ea85059_96463065 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f35e4679161a3_95575096 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -117,7 +117,7 @@ footer {
         <input type="email">
     </div><br><br>
     <div class="passbox">
-        <p class="forminfo">メールアドレス</p>
+        <p class="forminfo">パスワード</p>
         <input type="password">
     </div><br><br>
 
