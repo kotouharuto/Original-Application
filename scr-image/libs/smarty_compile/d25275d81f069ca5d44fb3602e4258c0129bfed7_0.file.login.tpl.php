@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-16 00:17:27
+/* Smarty version 3.1.34-dev-7, created on 2020-08-17 01:58:36
   from '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f387b170d1737_81379856',
+  'unifunc' => 'content_5f39e44c90bf90_45155185',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd25275d81f069ca5d44fb3602e4258c0129bfed7' => 
     array (
       0 => '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/login.tpl',
-      1 => 1597537046,
+      1 => 1597629516,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f387b170d1737_81379856 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f39e44c90bf90_45155185 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -33,7 +33,6 @@ crossorigin="anonymous">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-@media (max-width: 1000px) {
 .logintitle {
     font-size: 20px;
     text-align: center;
@@ -92,16 +91,13 @@ form {
 
 footer {
     width: 100%;
-    background-color: #89c7de;
+    background-color: #b8daff;
     color: #fff;
     text-align: center;
     padding: 30px 0;
     height: 100px;
     position: absolute;/*←絶対位置*/
     bottom: 0; /*下に固定*/
-}
-
-
 }
 </style>
 

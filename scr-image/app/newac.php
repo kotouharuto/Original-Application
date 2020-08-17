@@ -38,7 +38,7 @@ if(isset($_POST['signup'])) {
         $stmh = $pdo->prepare($sql);
         $stmh->execute([$username, $email, $password]);
         ?> 
-        <div class="alert alert-success" role="alert">登録が完了しました。</div>
+        <div class="alert alert-primary" role="alert">登録が完了しました。</div>
         <?php
     } catch(PDOExceptiomn $Exception) {
         ?>

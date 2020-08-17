@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-16 23:55:42
+/* Smarty version 3.1.34-dev-7, created on 2020-08-17 01:53:09
   from '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/newac.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f39c77e090637_85504465',
+  'unifunc' => 'content_5f39e305c76941_68258508',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '48e96e201b9e662a2d44b0528b1e7512982495f2' => 
     array (
       0 => '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/newac.tpl',
-      1 => 1597581521,
+      1 => 1597629188,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f39c77e090637_85504465 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f39e305c76941_68258508 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -78,7 +78,7 @@ input:hover {
 
 footer {
     width: 100%;
-    background-color: #89c7de;
+    background-color: #b8daff;
     color: #fff;
     text-align: center;
     padding: 30px 0;

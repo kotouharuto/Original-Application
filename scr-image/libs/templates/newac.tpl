@@ -57,7 +57,7 @@ input:hover {
 
 footer {
     width: 100%;
-    background-color: #89c7de;
+    background-color: #b8daff;
     color: #fff;
     text-align: center;
     padding: 30px 0;

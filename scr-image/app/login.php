@@ -16,8 +16,6 @@
 require_once "../libs/init.php";
 
 session_start();
-$smarty = getSmarty();
-$smarty->display('../libs/templates/login.tpl');
 
 if(isset($_POST['login'])) {
     if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
@@ -45,11 +43,17 @@ if(isset($_POST['login'])) {
     if(password_verify($_POST['password'], $row['password'])) {
         session_regenerate_id(true); //session_idを新しく生成し、置き換える
         $_SESSION['EMAIL'] = $row['email'];
-        echo '<h1>ログインしました</h1>';
+        ?>
+        <div class="alert alert-primary" role="alert">ログインに成功しました。</div>
+        <?php
     } else {
-        echo 'メールアドレスまたはパスワードが間違っています。';
+        ?>
+        <div class="alert alert-danger" role="alert">メールアドレスまたはパスワードが間違っています。</div>
+        <?php
         return false;
     }
 }
+$smarty = getSmarty();
+$smarty->display('../libs/templates/login.tpl');
 
 ?>

@@ -12,7 +12,6 @@ crossorigin="anonymous">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-@media (max-width: 1000px) {
 .logintitle {
     font-size: 20px;
     text-align: center;
@@ -71,16 +70,13 @@ form {
 
 footer {
     width: 100%;
-    background-color: #89c7de;
+    background-color: #b8daff;
     color: #fff;
     text-align: center;
     padding: 30px 0;
     height: 100px;
     position: absolute;/*←絶対位置*/
     bottom: 0; /*下に固定*/
-}
-
-
 }
 </style>
 
