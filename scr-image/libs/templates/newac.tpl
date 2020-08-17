@@ -87,7 +87,7 @@ footer {
     <input type="password" name="password" placeholder="8~30字以内の半角英数字で入力してください">
 </div><br>
 
-<input type="submit" class="accbtn" name="signup" value="アカウントを作成する">
+<button type="submit" class="accbtn" name="signup">アカウントを作成する</button>
 </form>
 
 <div class="lglink mt-5">

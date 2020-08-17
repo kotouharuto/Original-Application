@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-17 01:58:36
+/* Smarty version 3.1.34-dev-7, created on 2020-08-17 04:25:14
   from '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f39e44c90bf90_45155185',
+  'unifunc' => 'content_5f3a06aad8cdc0_63920775',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd25275d81f069ca5d44fb3602e4258c0129bfed7' => 
     array (
       0 => '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/login.tpl',
-      1 => 1597629516,
+      1 => 1597638313,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f39e44c90bf90_45155185 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f3a06aad8cdc0_63920775 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -39,8 +39,9 @@ crossorigin="anonymous">
     font-weight: bold;
 }
 input {
-    width: 60%;
-    
+    width: 50%;
+    height: 40px;
+    text-align: center;
 }
 input:hover {
     border: 1px solid #da3c41;
@@ -89,6 +90,17 @@ form {
     opacity: 0.9;
 }
 
+.accbtn {
+    color: white;
+    height: 40px;
+    background: #FF6666;
+    border-radius: 30px;
+    width: 50%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
 footer {
     width: 100%;
     background-color: #b8daff;
@@ -117,9 +129,7 @@ footer {
         <input type="password" name="password">
     </div><br><br>
 
-    <button class="loginbtn" name="login">
-        　ログインする　　
-    </button><br><br>
+    <button type="submit" class="accbtn" name="signup">ログインする</button>
 </form>
 <div class="newacbox">
     <p>アカウントをお持ちでない方はこちらから</p>

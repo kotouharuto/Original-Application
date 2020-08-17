@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-17 01:53:09
+/* Smarty version 3.1.34-dev-7, created on 2020-08-17 04:22:50
   from '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/newac.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f39e305c76941_68258508',
+  'unifunc' => 'content_5f3a061abd8d43_92331258',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '48e96e201b9e662a2d44b0528b1e7512982495f2' => 
     array (
       0 => '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/newac.tpl',
-      1 => 1597629188,
+      1 => 1597638158,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f39e305c76941_68258508 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f3a061abd8d43_92331258 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -108,7 +108,7 @@ footer {
     <input type="password" name="password" placeholder="8~30字以内の半角英数字で入力してください">
 </div><br>
 
-<input type="submit" class="accbtn" name="signup" value="アカウントを作成する">
+<button type="submit" class="accbtn" name="signup">アカウントを作成する</button>
 </form>
 
 <div class="lglink mt-5">

@@ -18,8 +18,9 @@ crossorigin="anonymous">
     font-weight: bold;
 }
 input {
-    width: 60%;
-    
+    width: 50%;
+    height: 40px;
+    text-align: center;
 }
 input:hover {
     border: 1px solid #da3c41;
@@ -68,6 +69,17 @@ form {
     opacity: 0.9;
 }
 
+.accbtn {
+    color: white;
+    height: 40px;
+    background: #FF6666;
+    border-radius: 30px;
+    width: 50%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
 footer {
     width: 100%;
     background-color: #b8daff;
@@ -96,9 +108,7 @@ footer {
         <input type="password" name="password">
     </div><br><br>
 
-    <button class="loginbtn" name="login">
-        　ログインする　　
-    </button><br><br>
+    <button type="submit" class="accbtn" name="signup">ログインする</button>
 </form>
 <div class="newacbox">
     <p>アカウントをお持ちでない方はこちらから</p>
