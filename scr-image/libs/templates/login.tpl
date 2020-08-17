@@ -90,17 +90,17 @@ footer {
 <body>
 <h1 class="logintitle mt-5">新しいフィットネス生活を始めましょう</h1><br>
 
-<form action="AuthCheck" method="POST">
+<form action="login.php" method="POST">
     <div class="emailbox">
         <p class="forminfo">メールアドレス</p>
-        <input type="email">
+        <input type="email" name="email">
     </div><br><br>
     <div class="passbox">
         <p class="forminfo">パスワード</p>
-        <input type="password">
+        <input type="password" name="password">
     </div><br><br>
 
-    <button class="loginbtn">
+    <button class="loginbtn" name="login">
         　ログインする　　
     </button><br><br>
 </form>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-14 01:09:59
+/* Smarty version 3.1.34-dev-7, created on 2020-08-16 00:17:27
   from '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f35e4679161a3_95575096',
+  'unifunc' => 'content_5f387b170d1737_81379856',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd25275d81f069ca5d44fb3602e4258c0129bfed7' => 
     array (
       0 => '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/login.tpl',
-      1 => 1597367398,
+      1 => 1597537046,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f35e4679161a3_95575096 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f387b170d1737_81379856 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -111,17 +111,17 @@ footer {
 <body>
 <h1 class="logintitle mt-5">新しいフィットネス生活を始めましょう</h1><br>
 
-<form action="AuthCheck" method="POST">
+<form action="login.php" method="POST">
     <div class="emailbox">
         <p class="forminfo">メールアドレス</p>
-        <input type="email">
+        <input type="email" name="email">
     </div><br><br>
     <div class="passbox">
         <p class="forminfo">パスワード</p>
-        <input type="password">
+        <input type="password" name="password">
     </div><br><br>
 
-    <button class="loginbtn">
+    <button class="loginbtn" name="login">
         　ログインする　　
     </button><br><br>
 </form>
