@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-17 04:25:14
+/* Smarty version 3.1.34-dev-7, created on 2020-08-19 00:57:01
   from '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f3a06aad8cdc0_63920775',
+  'unifunc' => 'content_5f3c78dd4fba68_36537727',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd25275d81f069ca5d44fb3602e4258c0129bfed7' => 
     array (
       0 => '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/login.tpl',
-      1 => 1597638313,
+      1 => 1597798616,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f3a06aad8cdc0_63920775 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f3c78dd4fba68_36537727 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -60,7 +60,7 @@ form {
 
 .forminfo {
     margin: 0;
-    font-size: 12px;
+    font-size: 14px;
 }
 .loginbtn {
     color: white;
@@ -107,9 +107,9 @@ footer {
     color: #fff;
     text-align: center;
     padding: 30px 0;
-    height: 100px;
-    position: absolute;/*←絶対位置*/
-    bottom: 0; /*下に固定*/
+    height: 50px;
+    position: absolute;
+    bottom: 0;
 }
 </style>
 
@@ -120,16 +120,22 @@ footer {
 <h1 class="logintitle mt-5">新しいフィットネス生活を始めましょう</h1><br>
 
 <form action="login.php" method="POST">
+    <div class="useridbox">
+        <p class="forminfo">会員ID</p>
+        <input type="text" name="user_id">
+    </div><br><br>
+
     <div class="emailbox">
         <p class="forminfo">メールアドレス</p>
         <input type="email" name="email">
     </div><br><br>
+
     <div class="passbox">
         <p class="forminfo">パスワード</p>
         <input type="password" name="password">
     </div><br><br>
 
-    <button type="submit" class="accbtn" name="signup">ログインする</button>
+    <button type="submit" class="accbtn" name="login">ログインする</button>
 </form>
 <div class="newacbox">
     <p>アカウントをお持ちでない方はこちらから</p>

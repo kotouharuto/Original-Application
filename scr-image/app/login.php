@@ -18,7 +18,10 @@ require_once "../libs/init.php";
 session_start();
 
 if(isset($_POST['login'])) {
-    if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+    $user_id = $_POST['user_id'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo '入力された値が不正です。';
         return false;
     }
@@ -27,10 +30,15 @@ if(isset($_POST['login'])) {
     try {
         $pdo = db_connect();
         $stmt = $pdo->prepare('SELECT * FROM users WHERE email = ?');
-        $stmt->execute([$_POST['email']]);
+        $stmt->execute([$email]);
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
     } catch(\Exception $e) {
         echo $e->getMessage() . PHP_EOL;
+    }
+
+    // user_idが存在しているか確認
+    if(!isset($row['user_id'])) {
+        echo '会員IDが間違っています。';
     }
     
     //emailがDB内に存在しているか確認
@@ -40,8 +48,9 @@ if(isset($_POST['login'])) {
     }
     
     //パスワード確認後にsessionにメールアドレスを渡す
-    if(password_verify($_POST['password'], $row['password'])) {
+    if(password_verify($password, $row['password'])) {
         session_regenerate_id(true); //session_idを新しく生成し、置き換える
+        $_SESSION['ID'] = $row['id'];
         $_SESSION['EMAIL'] = $row['email'];
         ?>
         <div class="alert alert-primary" role="alert">ログインに成功しました。</div>

@@ -39,7 +39,7 @@ form {
 
 .forminfo {
     margin: 0;
-    font-size: 12px;
+    font-size: 14px;
 }
 .loginbtn {
     color: white;
@@ -86,9 +86,9 @@ footer {
     color: #fff;
     text-align: center;
     padding: 30px 0;
-    height: 100px;
-    position: absolute;/*←絶対位置*/
-    bottom: 0; /*下に固定*/
+    height: 50px;
+    position: absolute;
+    bottom: 0;
 }
 </style>
 
@@ -99,16 +99,22 @@ footer {
 <h1 class="logintitle mt-5">新しいフィットネス生活を始めましょう</h1><br>
 
 <form action="login.php" method="POST">
+    <div class="useridbox">
+        <p class="forminfo">会員ID</p>
+        <input type="text" name="user_id">
+    </div><br><br>
+
     <div class="emailbox">
         <p class="forminfo">メールアドレス</p>
         <input type="email" name="email">
     </div><br><br>
+
     <div class="passbox">
         <p class="forminfo">パスワード</p>
         <input type="password" name="password">
     </div><br><br>
 
-    <button type="submit" class="accbtn" name="signup">ログインする</button>
+    <button type="submit" class="accbtn" name="login">ログインする</button>
 </form>
 <div class="newacbox">
     <p>アカウントをお持ちでない方はこちらから</p>

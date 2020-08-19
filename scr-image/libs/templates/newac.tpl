@@ -61,9 +61,19 @@ footer {
     color: #fff;
     text-align: center;
     padding: 30px 0;
-    height: 100px;
+    height: 50px;
     position: absolute;
     bottom: 0;
+}
+
+.infotext {
+    color: red;
+    font-size: 12px;
+}
+
+.forminfo {
+    margin: 0;
+    font-size: 14px;
 }
 
 </style>
@@ -71,26 +81,34 @@ footer {
 <body>
 
 <form action="newac.php" method="post" class="mt-5" style="text-align: center;">
-<h1 class="actitle mb-3">アカウントを作成</h1>
+<h1 class="actitle mb-3">アカウント作成</h1>
 <div>
-    <label>お名前</label><br>
+    <label class="forminfo">会員ID</label><br>
+    <p class="infotext">※10文字以内の半角英数字で入力してください</p>
+    <input type="text" name="user_id">
+</div><br>
+
+<div>
+    <label class="forminfo">お名前</label><br>
     <input type="text" name="username">
 </div><br>
 
 <div>
-    <label>メールアドレス</label><br>
+    <label class="forminfo">メールアドレス</label><br>
     <input type="email" name="email">
 </div><br>
 
 <div>
-    <label>パスワード</label><br>
-    <input type="password" name="password" placeholder="8~30字以内の半角英数字で入力してください">
+    <label class="forminfo">パスワード</label><br>
+    <p class="infotext">※8~30字以内の半角英数字で入力してください</p>
+    <input type="password" name="password">
 </div><br>
+
 
 <button type="submit" class="accbtn" name="signup">アカウントを作成する</button>
 </form>
 
-<div class="lglink mt-5">
+<div class="lglink mt-4">
 <p>既にアカウントをお持ちの場合はこちらから</p>
 <a href="login.php">ログインする</a>
 </div>

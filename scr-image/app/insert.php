@@ -1,4 +1,5 @@
 <?php
+require_once "../libs/init.php";
 
 //挿入処理ファイル
 function INSERT() {
