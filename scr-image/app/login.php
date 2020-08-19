@@ -50,7 +50,7 @@ if(isset($_POST['login'])) {
     //パスワード確認後にsessionにメールアドレスを渡す
     if(password_verify($password, $row['password'])) {
         session_regenerate_id(true); //session_idを新しく生成し、置き換える
-        $_SESSION['ID'] = $row['id'];
+        $_SESSION['user_id'] = $row['user_id'];
         $_SESSION['EMAIL'] = $row['email'];
         ?>
         <div class="alert alert-primary" role="alert">ログインに成功しました。</div>

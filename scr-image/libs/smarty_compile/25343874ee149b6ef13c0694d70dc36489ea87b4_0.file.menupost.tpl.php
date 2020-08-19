@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-13 09:36:11
+/* Smarty version 3.1.34-dev-7, created on 2020-08-19 04:40:15
   from '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/menupost.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f35098bbaccf8_56118504',
+  'unifunc' => 'content_5f3cad2f11c935_40000443',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '25343874ee149b6ef13c0694d70dc36489ea87b4' => 
     array (
       0 => '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/menupost.tpl',
-      1 => 1597311359,
+      1 => 1597812011,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f35098bbaccf8_56118504 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f3cad2f11c935_40000443 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -426,7 +426,7 @@ $_smarty_tpl->tpl_vars['row']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </table>
 
-<form  action="Confirmation.php" id="contact" method="post">
+<form  action="insert.php" id="contact" method="post">
     <div class="container">
         <div class="head">
         <h2>メニューを追加しましょう！</h2>

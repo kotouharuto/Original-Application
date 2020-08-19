@@ -14,7 +14,7 @@
 <?php
 require_once '../libs/init.php';
 
-$id = $_SESSION['id'];
+
 
 try {
     $pdo = db_connect();

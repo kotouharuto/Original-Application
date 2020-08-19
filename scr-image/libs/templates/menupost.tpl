@@ -394,7 +394,7 @@ crossorigin="anonymous">
 {/foreach}
 </table>
 
-<form  action="Confirmation.php" id="contact" method="post">
+<form  action="insert.php" id="contact" method="post">
     <div class="container">
         <div class="head">
         <h2>メニューを追加しましょう！</h2>
