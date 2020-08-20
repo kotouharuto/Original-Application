@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-19 04:40:15
+/* Smarty version 3.1.34-dev-7, created on 2020-08-19 23:41:19
   from '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/menupost.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f3cad2f11c935_40000443',
+  'unifunc' => 'content_5f3db89f778032_13488759',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '25343874ee149b6ef13c0694d70dc36489ea87b4' => 
     array (
       0 => '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/menupost.tpl',
-      1 => 1597812011,
+      1 => 1597880479,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f3cad2f11c935_40000443 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f3db89f778032_13488759 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -45,6 +45,7 @@ crossorigin="anonymous">
     background: white;
     padding: 0;
     }
+
     .container {
     max-width:600px;
     margin:0 auto;
@@ -55,6 +56,7 @@ crossorigin="anonymous">
     background-color:#FAFAFA;
     /* border: 1px solid black; */
     }
+
     .head {
     -webkit-border-radius:6px 6px 0px 0px;
     -moz-border-radius:6px 6px 0px 0px;
@@ -62,23 +64,27 @@ crossorigin="anonymous">
     background-color:#2ABCA7;
     color:#FAFAFA;
     }
+
     h2 {
     text-align:center;
     padding:18px 0 18px 0;
     font-size: 1.4em;
     }
+
     input {
     margin-bottom:10px;
     text-align:center;
     }
+
     textarea {
     height:100px;
     margin-bottom:10px;
     }
-    input:first-of-type
-    {
+
+    input:first-of-type{
     margin-top:35px;
     }
+
     input, textarea {
     font-size: 1em;
     padding: 15px 10px 10px;
@@ -98,18 +104,23 @@ crossorigin="anonymous">
     width: 80%;
     max-width: 600px;
     }
+
     ::-webkit-input-placeholder {
     color: #FAFAFA;
     }
+
     :-moz-placeholder {
     color: #FAFAFA;  
     }
+
     ::-moz-placeholder {
     color: #FAFAFA; 
     }
+
     :-ms-input-placeholder {  
     color: #FAFAFA;  
     }
+
     button {
     margin-top:15px;
     margin-bottom:25px;
@@ -126,9 +137,11 @@ crossorigin="anonymous">
     width:30%;
     color:#fff;
     }
+
     button:hover, .button:hover {
     background:#19a08c;
     }
+
     label.error {
         font-family:'Source Sans Pro',arial,sans-serif;
         font-size:1em;
@@ -143,6 +156,7 @@ crossorigin="anonymous">
         -moz-border-radius:6px;
         border-radius:6px;
     }
+
     /* media queries */
     @media (max-width: 700px) {
         label.error {
@@ -156,7 +170,6 @@ crossorigin="anonymous">
         }
         body {
         }  
-        }
         .message {
             font-family:'Source Sans Pro',arial,sans-serif;
             font-size:1.1em;
@@ -171,7 +184,12 @@ crossorigin="anonymous">
             -moz-border-radius:6px;
             border-radius:6px;
         }
+    }
 
+
+
+
+    /* スマホ、タブレット */
     @media (max-width:1130px) {
         body {
             height: 1500px;
@@ -190,6 +208,7 @@ crossorigin="anonymous">
 
         header {
             position: fixed;
+            top: 0;
             width: 100%;
             height: 50px;
             background: #F5F5F5;
@@ -302,61 +321,27 @@ crossorigin="anonymous">
             text-align: center;
         }
 
+        .header-logo-menu {
+            display:none;
+        }
+    }
+
+
+
+    /* PC */
     @media (min-width:1131px) {
-        nav {
-            position: fixed;
-            width: 100%;
-            top: 50px;
-            z-index: 10000;
-        }
-
-        .nav-item i {
-            display: block;
-            font-size: 24px;
-        }
-
-        .nav-list {
-            display: table;
+        body {
             padding: 0;
-            list-style: none;
-            text-align: center;
+            margin: 0;
         }
-
-        .nav-item {
-        display: table-cell;
-        /* padding: 2px 0px; */
-        }
-
-        .nav-list {
-            table-layout: fixed;
+        header {
             width: 100%;
-        }
-
-        .nav-list {
-            border-collapse: collapse;
-        }
-
-        .nav-item {
-        }
-
-        .navline {
-            background: gray;
-            width: 100%;
-            height: 1px;
-        }
-
-        .global-nav {
-            position: fixed;
-            left: 0;
-            /* bottom: 0; */
+            height: 50px;
             background: #F5F5F5;
         }
 
-        .nav-item a span {
-            display: block;
-            font-size: 15px;
-            color: black;
-            opacity: 1 !important;
+        .global-nav {
+            display: none;
         }
 
         h1 {
@@ -364,15 +349,127 @@ crossorigin="anonymous">
             text-align: center;
         }
 
-        .title {
-            font-size: 27px;
-            position: relative;
-            bottom: 30px;
+        .nowtitle {
+            display: none;
         }
 
-        .nowtitle {
-            font-size: 0px;
+        .title {
+            font-size: 25px;
+            position: relative;
+            top: 50px;
         }
+
+        #nav-drawer {
+            position: relative;
+        }
+
+        /*チェックボックス等は非表示に*/
+        .nav-unshown {
+        display:none;
+        }
+
+        /*アイコンのスペース*/
+        #nav-open {
+        display: inline-block;
+        width: 30px;
+        height: 22px;
+        vertical-align: middle;
+        }
+
+        /*ハンバーガーの形をCSSで表現*/
+        #nav-open span, #nav-open span:before, #nav-open span:after {
+        position: absolute;
+        height: 3px;/*線の太さ*/
+        width: 25px;/*長さ*/
+        border-radius: 3px;
+        background: #555;
+        display: block;
+        content: '';
+        cursor: pointer;
+        }
+        #nav-open span:before {
+        bottom: -8px;
+        }
+        #nav-open span:after {
+        bottom: -16px;
+        }
+
+        /*閉じる用の薄黒箇所*/
+        #nav-close {
+        display: none;
+        position: fixed;
+        z-index: 99;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        opacity: 0;
+        transition: .3s ease-in-out;
+        }
+
+        /*メニューの中身*/
+        #nav-content {
+        overflow: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        width: 90%;
+        max-width: 330px;/*最大幅（お好みで調整を）*/
+        height: 100%;
+        background: #fff;
+        transition: .3s ease-in-out;
+        -webkit-transform: translateX(-105%);
+        transform: translateX(-105%);
+        }
+
+        /*チェックがついたら表示させる*/
+        #nav-input:checked ~ #nav-close {
+        display: block;
+        opacity: .5;
+        }
+
+        #nav-input:checked ~ #nav-content {
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+        box-shadow: 6px 0 25px rgba(0,0,0,.15);
+        }
+
+        .header-logo-menu{
+        display: flex;
+        display: -moz-flex;
+        display: -o-flex;
+        display: -webkit-flex;
+        display: -ms-flex;
+        flex-direction: row;
+        -moz-flex-direction: row;
+        -o-flex-direction: row;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        }
+
+        /*ロゴやサイトタイトルをセンタリング*/
+        .logo-area{
+            text-align:center;
+            margin:auto;
+            font-size:  25px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .box {
+            display: none;
+        }
+
+        .humline {
+            width: 100%;
+            height: 1px;
+            background: black;
+        }
+
     }
 </style>
 
@@ -384,9 +481,31 @@ crossorigin="anonymous">
 <div class="box"></div>
 <header>
     <h1 class="nowtitle">筋トレ</h1>
+    <div class="header-logo-menu">
+    <div id="nav-drawer">
+        <input id="nav-input" type="checkbox" class="nav-unshown">
+        <label id="nav-open" for="nav-input"><span></span></label>
+        <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+        <div id="nav-content">
+            <ul>
+                <li><a href="#">ホーム</a></li>
+                <div class="humline"></div>
+                <li><a href="#">筋トレ</a></li>
+                <div class="humline"></div>
+                <li><a href="#">タイマー</a></li>
+                <div class="humline"></div>
+                <li><a href="#">SNS</a></li>
+                <div class="humline"></div>
+            </ul>
+        </div>
+    </div>
+    <div class="logo-area">筋トレ</div>
+    </div>
 </header>
 
 <div id="wrapper">
+
+
 
 <h2 class="title mt-3">〇〇日の筋トレ</h2>
 
@@ -434,7 +553,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <input type="text" name="menu" placeholder="トレーニングメニュー"/><br />
         <input type="number" name="num" placeholder="回数or秒数" />
         <input  type="number" name="setnum" placeholder="セット数"/><br />
-        <div class="message">追加</div>
+        
         <button id="submit" type="submit">追加</button>
     </div>
 </form>
@@ -475,7 +594,16 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </nav>
 
 
-
+<?php echo '<script'; ?>
+>
+$(function(){
+  $('.btn-trigger').on('click', function() {
+    $(this).toggleClass('active');
+    return false;
+  });
+});
+<?php echo '</script'; ?>
+>
 </body>
 </html><?php }
 }
