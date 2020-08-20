@@ -14,11 +14,9 @@
 <?php
 require_once '../libs/init.php';
 
-
-
 try {
     $pdo = db_connect();
-    $menus = fetchAllMenus($pdo);
+    $menus = fetchAllMenus($pdo, $_SESSION['user_id']);
 } catch (PDOException $Exception) {
     print "error：". $Exception->getMessage();
 }

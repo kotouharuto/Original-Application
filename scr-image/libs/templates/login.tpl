@@ -99,11 +99,6 @@ footer {
 <h1 class="logintitle mt-5">新しいフィットネス生活を始めましょう</h1><br>
 
 <form action="login.php" method="POST">
-    <div class="useridbox">
-        <p class="forminfo">会員ID</p>
-        <input type="text" name="user_id">
-    </div><br><br>
-
     <div class="emailbox">
         <p class="forminfo">メールアドレス</p>
         <input type="email" name="email">

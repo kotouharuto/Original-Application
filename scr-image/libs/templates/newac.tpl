@@ -83,12 +83,6 @@ footer {
 <form action="newac.php" method="post" class="mt-5" style="text-align: center;">
 <h1 class="actitle mb-3">アカウント作成</h1>
 <div>
-    <label class="forminfo">会員ID</label><br>
-    <p class="infotext">※10文字以内の半角英数字で入力してください</p>
-    <input type="text" name="user_id">
-</div><br>
-
-<div>
     <label class="forminfo">お名前</label><br>
     <input type="text" name="username">
 </div><br>

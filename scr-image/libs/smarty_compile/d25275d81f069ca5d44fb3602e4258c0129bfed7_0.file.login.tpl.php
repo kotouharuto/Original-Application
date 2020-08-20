@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-19 00:57:01
+/* Smarty version 3.1.34-dev-7, created on 2020-08-19 11:30:22
   from '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f3c78dd4fba68_36537727',
+  'unifunc' => 'content_5f3d0d4e3fbec3_98736763',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd25275d81f069ca5d44fb3602e4258c0129bfed7' => 
     array (
       0 => '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/login.tpl',
-      1 => 1597798616,
+      1 => 1597836550,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f3c78dd4fba68_36537727 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f3d0d4e3fbec3_98736763 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -120,11 +120,6 @@ footer {
 <h1 class="logintitle mt-5">新しいフィットネス生活を始めましょう</h1><br>
 
 <form action="login.php" method="POST">
-    <div class="useridbox">
-        <p class="forminfo">会員ID</p>
-        <input type="text" name="user_id">
-    </div><br><br>
-
     <div class="emailbox">
         <p class="forminfo">メールアドレス</p>
         <input type="email" name="email">

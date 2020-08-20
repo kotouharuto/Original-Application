@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-19 00:56:47
+/* Smarty version 3.1.34-dev-7, created on 2020-08-19 11:29:14
   from '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/newac.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f3c78cf13a4d4_68902156',
+  'unifunc' => 'content_5f3d0d0acee171_38076496',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '48e96e201b9e662a2d44b0528b1e7512982495f2' => 
     array (
       0 => '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/newac.tpl',
-      1 => 1597798606,
+      1 => 1597836541,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f3c78cf13a4d4_68902156 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f3d0d0acee171_38076496 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -103,12 +103,6 @@ footer {
 
 <form action="newac.php" method="post" class="mt-5" style="text-align: center;">
 <h1 class="actitle mb-3">アカウント作成</h1>
-<div>
-    <label class="forminfo">会員ID</label><br>
-    <p class="infotext">※10文字以内の半角英数字で入力してください</p>
-    <input type="text" name="user_id">
-</div><br>
-
 <div>
     <label class="forminfo">お名前</label><br>
     <input type="text" name="username">

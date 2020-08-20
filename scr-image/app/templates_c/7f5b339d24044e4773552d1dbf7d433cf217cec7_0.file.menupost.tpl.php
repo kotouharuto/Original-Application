@@ -403,7 +403,7 @@ crossorigin="anonymous">
 </table>
 
 while(1) {
-        $row = $stmh->fetch(PDO::FETCH_ASSOC);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
         if($row == false) 
         {
             break;

@@ -22,13 +22,14 @@ function db_connect()
 }
 
 //メニュー取得
-function fetchAllMenus($pdo)
+function fetchAllMenus($pdo, $user_id)
 {
-    $sql = "SELECT * FROM trainingmenu WHERE 1";
-    $stmh = $pdo->prepare($sql);
-    $stmh->execute();
+    $sql = "SELECT * FROM trainingmenu WHERE user_id = :user_id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+    $stmt->execute();
 
-    return $stmh->fetchAll();
+    return $stmt->fetchAll();
 }
 
 //メニュー追加
@@ -77,25 +78,25 @@ function EmptNumCheck(){
         print '<br>';
         print '<br>';
         if(isset($_POST['menu'])) {
-            // header("Location:menupost.php");
+            header("Location:menupost.php");
         }
     }
 }
 
-//挿入処理
-// 
+// 挿入処理
 function INSERT() {
     try {
         $pdo = db_connect();
         $pdo->beginTransaction();
-        $sql = "INSERT INTO trainingmenu (menu, num, setnum) VALUES (:menu, :num, :setnum)";
-        $stmh = $pdo->prepare($sql);
-        $stmh->bindValue(':menu', $_POST['menu'], PDO::PARAM_STR);
-        $stmh->bindValue(':num', $_POST['num'], PDO::PARAM_STR);
-        $stmh->bindValue(':setnum', $_POST['setnum'], PDO::PARAM_STR);
-        $stmh->execute();
+        $sql = "INSERT INTO trainingmenu (user_id, menu, num, setnum) VALUES (:user_id, :menu, :num, :setnum)";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':user_id', $_SESSION['user_id'], PDO::PARAM_STR);
+        $stmt->bindValue(':menu', $_POST['menu'], PDO::PARAM_STR);
+        $stmt->bindValue(':num', $_POST['num'], PDO::PARAM_STR);
+        $stmt->bindValue(':setnum', $_POST['setnum'], PDO::PARAM_STR);
+        $stmt->execute();
         $pdo->commit();
-        // header('Location:menupost.php');
+        header('Location:menupost.php');
     } catch (PDOException $Exception) {
         $pdo->rollback();
         print  "error：". $Exception->getMessage();
