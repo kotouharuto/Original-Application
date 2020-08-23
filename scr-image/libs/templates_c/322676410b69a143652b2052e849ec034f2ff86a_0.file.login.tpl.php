@@ -79,11 +79,11 @@ form {
 .loginbtn:hover {
     opacity: 0.9;
 }
-.signUpbox {
+.newacbox {
     text-align: center;
 }
 
-.signUpbox {
+.newacbox {
     position: relative;
     olor: white;
     height: 40px;
@@ -97,11 +97,11 @@ form {
     
 }
 
-.signUpbox p {
+.newacbox p {
     color: white;
     
 }
-.signUpbox a {
+.newacbox a {
     position: absolute;
     top: 0;
     left: 0;
@@ -109,7 +109,7 @@ form {
     width: 100%;
 }
 
-.signUpbox:hover {
+.newacbox:hover {
     opacity: 0.9;
 }
 
@@ -138,9 +138,9 @@ form {
     </button><br><br>
 </form>
 
-<button class="signUpbox">
+<button class="newacbox">
   <p>アカウントを作成する</p>
-  <a href="signUp.php"></a>
+  <a href="newac.php"></a>
 </button>
 
 </body>

@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 3.1.34-dev-7, created on 2020-08-19 11:29:14
-  from '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/signUp.tpl' */
+  from '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/newac.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,7 +11,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     '48e96e201b9e662a2d44b0528b1e7512982495f2' => 
     array (
-      0 => '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/signUp.tpl',
+      0 => '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/newac.tpl',
       1 => 1597836541,
       2 => 'file',
     ),
@@ -101,7 +101,7 @@ footer {
 </head>
 <body>
 
-<form action="signUp.php" method="post" class="mt-5" style="text-align: center;">
+<form action="newac.php" method="post" class="mt-5" style="text-align: center;">
 <h1 class="actitle mb-3">アカウント作成</h1>
 <div>
     <label class="forminfo">お名前</label><br>

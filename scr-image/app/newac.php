@@ -21,7 +21,7 @@ if(isset($_POST['signup'])) {
     //POSTのValidate
     if (!$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
         echo '入力された値が不正です。';
-        header("Location: signUp.php");
+        header("Location: newac.php");
         return false;
     }
         
@@ -30,7 +30,7 @@ if(isset($_POST['signup'])) {
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     } else {
         echo 'パスワードは半角英数字をそれぞれ1文字以上含んだ8~30文字以内で設定してください。';
-        header("Location: signUp.php");
+        header("Location: newac.php");
         return false;
     }
     
@@ -51,7 +51,7 @@ if(isset($_POST['signup'])) {
 }
 
 $smarty = getSmarty();
-$smarty->display('../libs/templates/signUp.tpl');
+$smarty->display('../libs/templates/newac.tpl');
 ?>
 </body>
 </html>

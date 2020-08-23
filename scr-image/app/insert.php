@@ -3,7 +3,6 @@ require_once '../libs/init.php';
 
 $pdo = db_connect();
 $pdo->beginTransaction();
-$user_id = $_SESSION['user_id'];
 $menu = $_POST['menu'];
 $num = $_POST['num'];
 $setnum = $_POST['setnum'];

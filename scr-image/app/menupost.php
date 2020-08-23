@@ -14,12 +14,12 @@
 <?php
 require_once '../libs/init.php';
 if(isset($_SESSION['user_id'])) {
+    echo $_SESSION['user_id'];
 } else {
     header("Location: login.php");
 }
 try {
     $pdo = db_connect();
-    //fetchAllMenus()に問題あり？
     $menus = fetchAllMenus($pdo, $_SESSION['user_id']);
 } catch (PDOException $Exception) {
     print "error：". $Exception->getMessage();
