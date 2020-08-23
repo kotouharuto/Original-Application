@@ -1,27 +1,6 @@
-<?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-19 11:29:14
-  from '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/signUp.tpl' */
+{* libs/template/signUp.tpl *}
 
-/* @var Smarty_Internal_Template $_smarty_tpl */
-if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f3d0d0acee171_38076496',
-  'has_nocache_code' => false,
-  'file_dependency' => 
-  array (
-    '48e96e201b9e662a2d44b0528b1e7512982495f2' => 
-    array (
-      0 => '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/signUp.tpl',
-      1 => 1597836541,
-      2 => 'file',
-    ),
-  ),
-  'includes' => 
-  array (
-  ),
-),false)) {
-function content_5f3d0d0acee171_38076496 (Smarty_Internal_Template $_smarty_tpl) {
-?>
+{* 新規登録ファイル *}
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -132,5 +111,4 @@ footer {
 
 </footer>
 </body>
-</html><?php }
-}
+</html>

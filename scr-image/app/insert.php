@@ -9,6 +9,12 @@ $stmt->execute();
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 $_SESSION['user_id'] = $row['user_id'];
 $user_id = $_SESSION['user_id'];
+if(isset($user_id)) {
+    // echo 'OK!!';
+    echo $user_id;
+} else {
+    echo 'NO...';
+}
 $menu = $_POST['menu'];
 $num = $_POST['num'];
 $setnum = $_POST['setnum'];

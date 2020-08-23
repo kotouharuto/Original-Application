@@ -1,8 +1,7 @@
 <?php
 
 //DB接続
-function db_connect() 
-{
+function db_connect() {
     $db_user = 'root';
     $db_pass = 'root';
     $db_host = 'localhost';
@@ -22,10 +21,12 @@ function db_connect()
 }
 
 //メニュー取得
-function fetchAllMenus($pdo, $user_id)
-{
+function fetchAllMenus($pdo, $user_id) {
     $sql = "SELECT * FROM trainingmenu WHERE user_id = :user_id";
     $stmt = $pdo->prepare($sql);
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    $_SESSION['user_id'] = $row['user_id'];
+    $user_id = $_SESSION['user_id'];
     $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
     $stmt->execute();
 
@@ -39,8 +40,7 @@ function fetchAllMenus($pdo, $user_id)
 // }
 
 //メニュー削除
-function deleteTrainingMenu($pdo, $id)
-{
+function deleteTrainingMenu($pdo, $id){
     $sql = "DELETE FROM `trainingmenu` WHERE `id` = :id";
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':id', $id, PDO::PARAM_INT);
@@ -96,8 +96,7 @@ function INSERT($pdo, $user_id, $memu, $num, $setnum) {
 }
 
 //Smarty接続
-function getSmarty()
-{
+function getSmarty(){
     $smarty = new Smarty();
     $smarty->template_dir = APPLICATION_DIR. 'libs/smarty_template';
     $smarty->compile_dir  = APPLICATION_DIR. 'libs/smarty_compile';
