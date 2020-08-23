@@ -32,6 +32,7 @@ function Login() {
         if(password_verify($password, $row['password'])) {
             session_regenerate_id(true); //session_idを新しく生成し、置き換える
             $_SESSION['user_id'] = $row['user_id'];
+            $user_id = $_SESSION['user_id'];
             ?>
         <div class="alert alert-primary" role="alert">ログインに成功しました。</div>
         <?php
