@@ -25,10 +25,8 @@ function fetchAllMenus($pdo, $user_id) {
     $sql = "SELECT * FROM trainingmenu WHERE user_id = :user_id";
     $stmt = $pdo->prepare($sql);
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
-    $user_id = $_SESSION['user_id'];
     $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
     $stmt->execute();
-
     return $stmt->fetchAll();
 }
 

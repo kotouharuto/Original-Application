@@ -13,7 +13,10 @@
 
 <?php
 require_once '../libs/init.php';
-
+if(isset($_SESSION['user_id'])) {
+} else {
+    header("Location: login.php");
+}
 try {
     $pdo = db_connect();
     //fetchAllMenus()に問題あり？
