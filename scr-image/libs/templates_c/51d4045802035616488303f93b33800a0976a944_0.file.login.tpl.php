@@ -74,15 +74,15 @@ form {
     text-decoration: none;
 }
 
-.newacbox {
+.signUpbox {
     text-align: center;
 }
 
-.newacbox a {
+.signUpbox a {
     text-decoration:none;
 }
 
-.newacbox a:hover {
+.signUpbox a:hover {
     color: red;
 }
 
@@ -125,9 +125,9 @@ footer {
         　ログインする　　
     </button><br><br>
 </form>
-<div class="newacbox">
+<div class="signUpbox">
     <p>アカウントをお持ちでない方はこちらから</p>
-    <a href="newac.php">アカウントを作成する</a>
+    <a href="signUp.php">アカウントを作成する</a>
 </div>
 
 <footer>

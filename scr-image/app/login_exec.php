@@ -1,5 +1,10 @@
 <?php
 require_once "../libs/init.php";
+
+// 今日やること(0824)：コードを順に冷静になって見直していく。
+//             間違いがあったらすぐに修正。
+// 今日中に問題解決(絶対！！)
+
 //ログイン処理
 function Login() {
     if(isset($_POST['login'])) {
