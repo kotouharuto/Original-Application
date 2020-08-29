@@ -80,7 +80,7 @@ footer {
 </head>
 <body>
 
-<form action="signUp.php" method="post" class="mt-5" style="text-align: center;">
+<form action="signup.php" method="post" class="mt-5" style="text-align: center;">
 <h1 class="actitle mb-3">アカウント作成</h1>
 <div>
     <label class="forminfo">お名前</label><br>
