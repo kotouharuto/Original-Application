@@ -23,6 +23,7 @@ function db_connect()
 
 //メニュー取得
 function fetchAllMenus($pdo, $user_id) {
+    $pdo = db_connect();
     $sql = "SELECT * FROM trainingmenu WHERE user_id = :user_id";
     $stmt = $pdo->prepare($sql);
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
