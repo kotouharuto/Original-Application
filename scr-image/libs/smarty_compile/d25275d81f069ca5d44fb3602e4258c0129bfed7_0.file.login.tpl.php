@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-23 23:56:07
+/* Smarty version 3.1.34-dev-7, created on 2020-08-29 13:02:37
   from '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f4302171ed452_01288446',
+  'unifunc' => 'content_5f4a51ed9dcff5_78971566',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd25275d81f069ca5d44fb3602e4258c0129bfed7' => 
     array (
       0 => '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/login.tpl',
-      1 => 1598192733,
+      1 => 1598706156,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f4302171ed452_01288446 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f4a51ed9dcff5_78971566 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -134,7 +134,7 @@ footer {
 </form>
 <div class="signUpbox">
     <p>アカウントをお持ちでない方はこちらから</p>
-    <a href="signUp.php">アカウントを作成する</a>
+    <a href="signup.php">アカウントを作成する</a>
 </div>
 
 <footer>

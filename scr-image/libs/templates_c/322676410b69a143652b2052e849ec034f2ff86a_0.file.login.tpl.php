@@ -140,7 +140,7 @@ form {
 
 <button class="signUp">
   <p>アカウントを作成する</p>
-  <a href="signUp.php"></a>
+  <a href="signup.php"></a>
 </button>
 
 </body>

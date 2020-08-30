@@ -127,7 +127,7 @@ footer {
 </form>
 <div class="signUpbox">
     <p>アカウントをお持ちでない方はこちらから</p>
-    <a href="signUp.php">アカウントを作成する</a>
+    <a href="signup.php">アカウントを作成する</a>
 </div>
 
 <footer>

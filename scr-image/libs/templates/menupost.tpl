@@ -494,7 +494,7 @@ crossorigin="anonymous">
         <th scope="col"></th>
         <th scope="col">メニュー</th>
         <th scope="col">回数</th>
-        <th scope="col">セット数</th>
+        <th scope="col">セット数</th> 
         <th></th>
         </tr>
      </thead>

@@ -98,7 +98,7 @@ footer {
 <body>
 <h1 class="logintitle mt-5">新しいフィットネス生活を始めましょう</h1><br>
 
-<form action="login.php" method="POST">
+<form action="login_exec.php" method="POST">
     <div class="emailbox">
         <p class="forminfo">メールアドレス</p>
         <input type="email" name="email">
