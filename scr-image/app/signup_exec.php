@@ -12,6 +12,7 @@ function signUp() {
     if(isset($_POST['signup'])) {
         
         $username = $_POST['username'];
+        $_SESSION['USERNAME'];
         
         //POSTのValidate
         if (!$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
