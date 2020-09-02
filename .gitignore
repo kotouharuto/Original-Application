@@ -1,0 +1,4 @@
+.idea
+scr-image/libs/cache/*
+scr-image/libs/templates_c/*
+scr-image/smarty_demo/libs/smarty_compile/*

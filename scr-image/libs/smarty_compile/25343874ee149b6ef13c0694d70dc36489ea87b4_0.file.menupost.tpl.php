@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-19 23:41:19
+/* Smarty version 3.1.34-dev-7, created on 2020-09-01 05:19:07
   from '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/menupost.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f3db89f778032_13488759',
+  'unifunc' => 'content_5f4dd9cb53aed7_34473397',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '25343874ee149b6ef13c0694d70dc36489ea87b4' => 
     array (
       0 => '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/menupost.tpl',
-      1 => 1597880479,
+      1 => 1598749946,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f3db89f778032_13488759 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f4dd9cb53aed7_34473397 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -515,7 +515,7 @@ crossorigin="anonymous">
         <th scope="col"></th>
         <th scope="col">メニュー</th>
         <th scope="col">回数</th>
-        <th scope="col">セット数</th>
+        <th scope="col">セット数</th> 
         <th></th>
         </tr>
      </thead>
