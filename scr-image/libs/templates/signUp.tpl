@@ -76,11 +76,16 @@ footer {
     font-size: 14px;
 }
 
+.err-message {
+    text-align: center;
+    color: red;
+}
+
 </style>
 </head>
 <body>
 
-<form action="signup.php" method="post" class="mt-5" style="text-align: center;">
+<form action="signup_exec.php" method="post" class="mt-5" style="text-align: center;">
 <h1 class="actitle mb-3">アカウント作成</h1>
 <div>
     <label class="forminfo">お名前</label><br>
@@ -101,6 +106,10 @@ footer {
 
 <button type="submit" class="accbtn" name="signup">アカウントを作成する</button>
 </form>
+
+{if isset($error)}
+    <p class="err-message mt-5 mb-3">※{$error}</p>
+{/if}
 
 <div class="lglink mt-4">
 <p>既にアカウントをお持ちの場合はこちらから</p>

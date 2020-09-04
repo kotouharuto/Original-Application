@@ -90,6 +90,11 @@ footer {
     position: absolute;
     bottom: 0;
 }
+
+.err-message {
+    text-align: center;
+    color: red;
+}
 </style>
 
 <head>
@@ -111,6 +116,10 @@ footer {
 
     <button type="submit" class="accbtn" name="login">ログインする</button>
 </form>
+
+{if isset($error)}
+    <p class="err-message mt-5 mb-3">※{$error}</p>
+{/if}
 <div class="signUpbox">
     <p>アカウントをお持ちでない方はこちらから</p>
     <a href="signup.php">アカウントを作成する</a>

@@ -1,24 +1,16 @@
 <?php
-function signUp() {
     require_once "../libs/init.php";
     
     $pdo = db_connect();
     
-    // エラーがあったら表示
-    if (isset($_GET['error'])) {
-        echo $_GET['error'];
+        
+    $username = $_POST['username'];
+        
+    //POSTのValidate
+    if (!$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        header("Location: signup.php?error=入力された値が不正です。");
+        return false;
     }
-    // signupがあったら処理を実行
-    if(isset($_POST['signup'])) {
-        
-        $username = $_POST['username'];
-        $_SESSION['USERNAME'];
-        
-        //POSTのValidate
-        if (!$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-            header("Location: signup.php?error=入力された値が不正です。");
-            return false;
-        }
         
         // パスワードの正規表現
         if (preg_match('/\A(?=.*[a-z])(?=.*?\d)[a-z\d]{8,30}+\z/i', $_POST['password'])) {
@@ -42,14 +34,13 @@ function signUp() {
         <div class="alert alert-primary" role="alert">登録が完了しました。</div>
         <a href="login.php">ログインしてください</a>
         <?php
-        // header("Location: login.php");
+        header("Location: login.php");
     } catch(PDOExceptiomn $Exception) {
         ?>
         <div class="alert alert-danger" role="alert">登録済みのメールアドレスです。</div>
         <?php
     }
-}
-}
+
 
 
 

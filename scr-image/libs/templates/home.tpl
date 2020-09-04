@@ -13,6 +13,7 @@
     </style>
 </head>
 <body>
+    <a href="menupost.php" class="">メニューを追加する</a>
     <a href="logout.php" class="logoutlink">ログアウトする</a>
 </body>
 </html>
