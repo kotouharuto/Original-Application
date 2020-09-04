@@ -10,4 +10,4 @@ echo "こんにちは". htmlspecialchars($_SESSION['USERNAME']) ."さん。今�
 
 
 $smarty = getSmarty();
-$smarty->display('../libs/templates/home.tpl');
+$smarty->display('home.tpl');

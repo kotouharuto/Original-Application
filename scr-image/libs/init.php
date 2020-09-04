@@ -1,9 +1,9 @@
 <?php
-session_start();
-require_once '../libs/smarty/Smarty.class.php';
-require_once '../libs/fucntion.php';
-require_once '../libs/classes/AuthUser.php';
-require_once '../libs/classes/SessionManager.php';
-
 const APPLICATION_DIR = __DIR__. '/../';
+require_once APPLICATION_DIR. 'libs/smarty/Smarty.class.php';
+require_once APPLICATION_DIR. 'libs/fucntion.php';
+require_once APPLICATION_DIR. 'libs/classes/AuthUser.php';
+require_once APPLICATION_DIR. 'libs/classes/SessionManager.php';
+
+session_start();
 ?>

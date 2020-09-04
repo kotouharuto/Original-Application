@@ -85,9 +85,10 @@ function EmptNumCheck(){
 
 // 挿入処理
 function INSERT($pdo, $user_id, $memu, $num, $setnum) {
-    $sql = "INSERT INTO trainingmenu (user_id, menu, num, setnum) VALUES (:user_id, :menu, :num, :setnum)";
+    $sql = "INSERT INTO trainingmenu (user_id, date, menu, num, setnum) VALUES (:user_id, :date, :menu, :num, :setnum)";
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':user_id', $_SESSION['user_id'], PDO::PARAM_STR);
+    $stmt->bindValue(':date', $_POST['date'], PDO::PARAM_STR);
     $stmt->bindValue(':menu', $_POST['menu'], PDO::PARAM_STR);
     $stmt->bindValue(':num', $_POST['num'], PDO::PARAM_STR);
     $stmt->bindValue(':setnum', $_POST['setnum'], PDO::PARAM_STR);
@@ -98,11 +99,12 @@ function INSERT($pdo, $user_id, $memu, $num, $setnum) {
 //Smarty接続
 function getSmarty()
 {
+    require_once("../libs/smarty/Smarty.class.php");
     $smarty = new Smarty();
-    $smarty->template_dir = APPLICATION_DIR. 'libs/smarty_template';
-    $smarty->compile_dir  = APPLICATION_DIR. 'libs/smarty_compile';
-    $smarty->config_dir   = APPLICATION_DIR. 'libs/smarty_config';
-    $smarty->cache_dir    = APPLICATION_DIR. 'libs/smarty_cache';
+    $smarty->template_dir = APPLICATION_DIR. 'libs/templates';
+    $smarty->compile_dir  = APPLICATION_DIR. 'libs/templates_c';
+    $smarty->config_dir   = APPLICATION_DIR. 'libs/config';
+    $smarty->cache_dir    = APPLICATION_DIR. 'libs/cache';
 
     return $smarty;
 }
