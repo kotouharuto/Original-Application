@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-26 11:57:17
+/* Smarty version 3.1.34-dev-7, created on 2020-09-02 11:32:38
   from '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/signUp.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f464e1d71de78_98869762',
+  'unifunc' => 'content_5f4f82d6dafc44_13602934',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '26fa8cca52d48aa15b1936cb7dfff1d5a22b4e5b' => 
     array (
       0 => '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/signUp.tpl',
-      1 => 1598443009,
+      1 => 1599046351,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f464e1d71de78_98869762 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f4f82d6dafc44_13602934 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -97,11 +97,16 @@ footer {
     font-size: 14px;
 }
 
+.err-message {
+    text-align: center;
+    color: red;
+}
+
 </style>
 </head>
 <body>
 
-<form action="signup.php" method="post" class="mt-5" style="text-align: center;">
+<form action="signup_exec.php" method="post" class="mt-5" style="text-align: center;">
 <h1 class="actitle mb-3">アカウント作成</h1>
 <div>
     <label class="forminfo">お名前</label><br>
@@ -122,6 +127,11 @@ footer {
 
 <button type="submit" class="accbtn" name="signup">アカウントを作成する</button>
 </form>
+
+<?php if ((isset($_smarty_tpl->tpl_vars['error']->value))) {?>
+    <p class="err-message mt-5 mb-3">※<?php echo $_smarty_tpl->tpl_vars['error']->value;?>
+</p>
+<?php }?>
 
 <div class="lglink mt-4">
 <p>既にアカウントをお持ちの場合はこちらから</p>
