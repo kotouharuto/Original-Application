@@ -518,6 +518,7 @@ crossorigin="anonymous">
         <div class="head">
         <h2>メニューを追加しましょう！</h2>
         </div>
+        <input type="num" name="date" value="{$date}"></input>
         <input type="text" name="menu" placeholder="トレーニングメニュー"/><br />
         <input type="number" name="num" placeholder="回数or秒数" />
         <input  type="number" name="setnum" placeholder="セット数"/><br />
@@ -532,28 +533,24 @@ crossorigin="anonymous">
             <li class="nav-item">
                 <a href="#">
                     <i class="fas fa-home"></i>
-                    <img src="homeimg.png" alt="" width="25%" height="20%">
                     <span>ホーム</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="#">
                   <i class="fas fa-star"></i>
-                  <img src="danbelimg.png" alt="" width="25%" height="20%">
                   <span>筋トレ</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="#">
                   <i class="fas fa-history"></i>
-                  <img src="timerimg.jpg" alt="" width="25%" height="20%">
                   <span>タイマー</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="#">
                   <i class="fas fa-cart-arrow-down"></i>
-                  <img src="SNSimg2.png" alt="" width="25%" height="20%">
                   <span>SNS</span>
                 </a>
             </li>
