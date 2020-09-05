@@ -461,7 +461,7 @@ crossorigin="anonymous">
 <header>
     <h1 class="nowtitle">筋トレ</h1>
     <div class="header-logo-menu">
-    <div id="nav-drawer">
+    <div id="nav-drawer" class="mt-3 ml-3">
         <input id="nav-input" type="checkbox" class="nav-unshown">
         <label id="nav-open" for="nav-input"><span></span></label>
         <label class="nav-unshown" id="nav-close" for="nav-input"></label>

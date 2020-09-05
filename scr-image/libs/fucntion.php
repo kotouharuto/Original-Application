@@ -22,12 +22,13 @@ function db_connect()
 }
 
 //メニュー取得
-function fetchAllMenus($pdo, $user_id) {
+function fetchAllMenus($pdo, $user_id, $date) {
     $pdo = db_connect();
-    $sql = "SELECT * FROM trainingmenu WHERE user_id = :user_id";
+    $sql = "SELECT * FROM trainingmenu WHERE user_id = :user_id AND date = :date";
     $stmt = $pdo->prepare($sql);
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+    $stmt->bindValue(':date', $date, PDO::PARAM_INT);
     $stmt->execute();
     return $stmt->fetchAll();
 }
@@ -84,11 +85,11 @@ function EmptNumCheck(){
 }
 
 // 挿入処理
-function INSERT($pdo, $user_id, $memu, $num, $setnum) {
+function INSERT($pdo, $date, $user_id, $memu, $num, $setnum) {
     $sql = "INSERT INTO trainingmenu (user_id, date, menu, num, setnum) VALUES (:user_id, :date, :menu, :num, :setnum)";
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':user_id', $_SESSION['user_id'], PDO::PARAM_STR);
-    $stmt->bindValue(':date', $_POST['date'], PDO::PARAM_STR);
+    $stmt->bindValue(':date', $_SESSION['date'], PDO::PARAM_STR);
     $stmt->bindValue(':menu', $_POST['menu'], PDO::PARAM_STR);
     $stmt->bindValue(':num', $_POST['num'], PDO::PARAM_STR);
     $stmt->bindValue(':setnum', $_POST['setnum'], PDO::PARAM_STR);
