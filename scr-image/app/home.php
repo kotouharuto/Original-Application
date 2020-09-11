@@ -6,8 +6,8 @@ require_once '../libs/init.php';
 // $row = $stmt->fetch(PDO::FETCH_ASSOC);
 // $stmt->execute();
 
-echo "こんにちは". htmlspecialchars($_SESSION['USERNAME']) ."さん。今日も筋トレを楽しみましょう。";
-
+$title_text = "こんにちは". htmlspecialchars($_SESSION['USERNAME']) ."さん。".'<br>'."今日も筋トレを楽しみましょう。";
 
 $smarty = getSmarty();
+$smarty->assign('title_text2', $title_text);
 $smarty->display('home.tpl');

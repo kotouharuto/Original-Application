@@ -485,9 +485,6 @@ crossorigin="anonymous">
 <div id="wrapper">
 
 
-
-<h2 class="title mt-3">〇〇日の筋トレ</h2>
-
 <table class="table table-hover mt-5">
     <thead>
         <tr>
@@ -498,7 +495,7 @@ crossorigin="anonymous">
         <th></th>
         </tr>
      </thead>
-
+<p>{$date}</p>
 
 {foreach  from=$menus item=$row}
         <tbody>
@@ -507,7 +504,7 @@ crossorigin="anonymous">
                 <td>{$row.menu}</td>
                 <td>{$row.num}</td>
                 <td>{$row.setnum}</td>
-                <td><a href="menu_delete.php?action=delete&id={$row.id}" class="complate" name="delete">完了</a></td>
+                <td><a href="menu_delete.php?action=delete&id={$row.id}&date={$date->format('Ymd')} class="complate" name="delete">完了</a></td>
             </tr>
         </tbody>
 {/foreach}
@@ -518,12 +515,12 @@ crossorigin="anonymous">
         <div class="head">
         <h2>メニューを追加しましょう！</h2>
         </div>
-        <input type="num" name="date" value="{$date}"></input>
+        <input type="hidden" name="date" value="{$date}"></input>
         <input type="text" name="menu" placeholder="トレーニングメニュー"/><br />
         <input type="number" name="num" placeholder="回数or秒数" />
         <input  type="number" name="setnum" placeholder="セット数"/><br />
         
-        <button id="submit" type="submit">追加</button>
+        <button id="submit" name="insert" type="submit">追加</button>
     </div>
 </form>
 
@@ -531,27 +528,21 @@ crossorigin="anonymous">
         <!-- <div class="navline"></div> -->
         <ul class="nav-list">
             <li class="nav-item">
-                <a href="#">
+                <a href="home.php">
                     <i class="fas fa-home"></i>
                     <span>ホーム</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#">
+                <a href="calendar.php">
                   <i class="fas fa-star"></i>
                   <span>筋トレ</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#">
+                <a href="stopwatch.html">
                   <i class="fas fa-history"></i>
                   <span>タイマー</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#">
-                  <i class="fas fa-cart-arrow-down"></i>
-                  <span>SNS</span>
                 </a>
             </li>
         </ul>
