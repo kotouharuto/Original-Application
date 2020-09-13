@@ -12,6 +12,7 @@
 {foreach $dates as $date}
     <a href="menupost.php?date={$date->format('Ymd')}">{$date->format('Y/m/d')}</a><br>
     
+    
 {/foreach}
 </body>
 </html>
