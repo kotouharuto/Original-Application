@@ -8,6 +8,7 @@ function Login() {
     }
     if(isset($_POST['login'])) {
         $email = $_POST['email'];
+        $_SESSION['email'] = $_POST['email'];
         $password = $_POST['password'];
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             header('Location: login.php?error=入力された値が不正です。');

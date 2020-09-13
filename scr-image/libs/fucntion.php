@@ -40,11 +40,12 @@ function fetchAllMenus($pdo, $user_id, $date) {
 // }
 
 //メニュー削除
-function deleteTrainingMenu($pdo, $id)
+function deleteTrainingMenu($pdo, $id, $date)
 {
-    $sql = "DELETE FROM `trainingmenu` WHERE `id` = :id";
+    $sql = "DELETE FROM `trainingmenu` WHERE id = :id AND date = :date";
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $stmt->bindValue(':date', $date, PDO::PARAM_INT);
     $stmt->execute();
 }
 
@@ -89,7 +90,7 @@ function INSERT($pdo, $date, $user_id, $memu, $num, $setnum) {
     $sql = "INSERT INTO trainingmenu (user_id, date, menu, num, setnum) VALUES (:user_id, :date, :menu, :num, :setnum)";
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':user_id', $_SESSION['user_id'], PDO::PARAM_STR);
-    $stmt->bindValue(':date', $_SESSION['date'], PDO::PARAM_STR);
+    $stmt->bindValue(':date', $date, PDO::PARAM_STR);
     $stmt->bindValue(':menu', $_POST['menu'], PDO::PARAM_STR);
     $stmt->bindValue(':num', $_POST['num'], PDO::PARAM_STR);
     $stmt->bindValue(':setnum', $_POST['setnum'], PDO::PARAM_STR);
