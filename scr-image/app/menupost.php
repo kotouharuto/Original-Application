@@ -1,10 +1,15 @@
 <?php
 require_once '../libs/init.php';
 
+$request = new Request();
 if(!isset($_SESSION['user_id'])) {
     header("Location: login.php");
 }
-$date = $_GET['date'];
+$datetime = Request::get('date');
+echo $datetime;
+// $date = date('Ymd', strtotime($datetime));
+$date = date('Ymd',strtotime($datetime));
+echo $date;
 
 if(isset($date)) {
     try {
