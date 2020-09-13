@@ -495,7 +495,6 @@ crossorigin="anonymous">
         <th></th>
         </tr>
      </thead>
-<p>{$date}</p>
 
 {foreach  from=$menus item=$row}
         <tbody>
@@ -504,7 +503,7 @@ crossorigin="anonymous">
                 <td>{$row.menu}</td>
                 <td>{$row.num}</td>
                 <td>{$row.setnum}</td>
-                <td><a href="menu_delete.php?action=delete&id={$row.id}&date={$date->format('Ymd')} class="complate" name="delete">完了</a></td>
+                <td><a href="menu_delete.php?action=delete&id={$row.id}&date={$date}" class="complate" name="delete">完了</td>
             </tr>
         </tbody>
 {/foreach}
