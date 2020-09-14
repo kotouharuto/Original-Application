@@ -2,7 +2,7 @@
 require_once "../libs/init.php";
 
 if (isset($_SESSION['user_id'])) {
-    header("Location: home.php");
+    header("Location: calendar.php");
 }
 
 $smarty = getSmarty();

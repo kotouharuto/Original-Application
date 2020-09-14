@@ -41,7 +41,7 @@ function Login() {
             ?>
             <div class="alert alert-primary" role="alert">ログインに成功しました。</div>
             <?php
-            header("Location: home.php");
+            header("Location: calendar.php");
         } else {
             header("Location: login.php?error=メールアドレス又はパスワードが間違っています。");
             return false;

@@ -107,16 +107,53 @@
             opacity: 1 !important;
         }
 
+        .linkbox {
+            height:100px;
+            width: 50%;
+            background: red;
+            border-radius: 3px;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .linkbox2 {
+            height:100px;
+            width: 50%;
+            background: blue;
+            border-radius: 3px;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .linkbox3 {
+            height:100px;
+            width: 50%;
+            background: gray;
+            border-radius: 3px;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            
+        }
+
         }
     </style>
 </head>
 <body>
 <h1 class="tt">ホーム</h1>
 <hr>
-<h2 class="tt2">{$title_text2}</h2>
+<h2 class="tt2">{$callname_text}</h2>
 
-<div class="linkbox btn btn-primary">
+<div class="linkbox">
 <a href="calendar.php">トレーニングメニューを追加しましょう!</a>
+</div><br>
+<div class="linkbox2">
+<a href="stopwatch.html">タイマーを使って筋トレをしましょう!</a>
+</div><br>
+<div class="linkbox3">
+<a href="logout.php">ログアウト</a>
 </div>
 
 <a href="logout.php" class="logoutlink">ログアウトする</a>
