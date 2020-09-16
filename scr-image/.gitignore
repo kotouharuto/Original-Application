@@ -1,3 +1,5 @@
 .idea
 scr-image/libs/cache/*
 scr-image/libs/templates_c/*
+scr-image/vendor
+.env
