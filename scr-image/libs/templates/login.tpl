@@ -17,6 +17,11 @@ crossorigin="anonymous">
     text-align: center;
     font-weight: bold;
 }
+
+.fitniis {
+    margin: 0;
+}
+
 input {
     width: 50%;
     height: 40px;
@@ -91,6 +96,10 @@ footer {
     bottom: 0;
 }
 
+.logintitle {
+    margin: 0;
+}
+
 .err-message {
     text-align: center;
     color: red;
@@ -101,7 +110,10 @@ footer {
 <title>ログインページ</title>
 </head>
 <body>
-<h1 class="logintitle mt-5">新しいフィットネス生活を始めましょう</h1><br>
+<header>
+<h1 class="fitniis">fitniis</h1>
+</header>
+<h1 class="logintitle mt-3">新しいフィットネス生活を始めましょう</h1><br>
 
 <form action="login_exec.php" method="POST">
     <div class="emailbox">
