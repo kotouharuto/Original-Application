@@ -2,12 +2,16 @@
 require_once '../libs/init.php';
 require_once '../libs/function.php';
 
-$request = new Request();
+use App\Request;
+// $request = new Request();
 if(!isset($_SESSION['user_id'])) {
     header("Location: login.php");
 }
-$datetime = Request::get('date');
+
+$datetime = $_REQUEST['date'];
+
 $date = date('Ymd',strtotime($datetime));
+$datetext = date('Y年m月d日',strtotime($datetime));
 
 if(isset($date)) {
     try {
@@ -20,5 +24,8 @@ if(isset($date)) {
     $smarty = getSmarty();
     $smarty->assign('menus', $menus);
     $smarty->assign('date', $date);
+    $smarty->assign('datetext', $datetext);
     $smarty->display('menupost.tpl');
+} else {
+    header("Location: login.php");
 }

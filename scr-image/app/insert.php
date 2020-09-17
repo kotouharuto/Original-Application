@@ -1,6 +1,7 @@
 <?php
 require_once '../libs/init.php';
-$request = new Request();
+use App\Request;
+
 $date = Request::get('date');
 if(isset($_REQUEST['insert'])) {
     $sql =  "SELECT email FROM users WHERE email = :email";

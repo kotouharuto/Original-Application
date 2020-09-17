@@ -3,8 +3,8 @@
 //DB接続
 function db_connect() 
 {
-    $db_user = 'root';
-    $db_pass = 'root';
+    $db_user = $_ENV['DB_USER'];
+    $db_pass = $_ENV['DB_PASS'];
     $db_host = 'localhost';
     $db_name = 'tr_ng';
     $db_type = 'mysql';

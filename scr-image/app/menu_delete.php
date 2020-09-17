@@ -1,9 +1,10 @@
 <?php
 require_once '../libs/init.php';
 
+use App\Request;
+
 //削除処理ファイル
 $pdo = db_connect();
-$request = new Request();
 $date = Request::get('date');
 try {
     $pdo->beginTransaction();
