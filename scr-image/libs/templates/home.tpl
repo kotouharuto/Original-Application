@@ -150,7 +150,7 @@
 <a href="calendar.php">トレーニングメニューを追加しましょう!</a>
 </div><br>
 <div class="linkbox2">
-<a href="stopwatch.html">タイマーを使って筋トレをしましょう!</a>
+<a href="stopwatch.php">タイマーを使って筋トレをしましょう!</a>
 </div><br>
 <div class="linkbox3">
 <a href="logout.php">ログアウト</a>
@@ -174,7 +174,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="stopwatch.html">
+                <a href="stopwatch.php">
                   <i class="fas fa-history"></i>
                   <span>タイマー</span>
                 </a>

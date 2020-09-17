@@ -15,6 +15,11 @@ crossorigin="anonymous">
 body {
 
 }
+
+.fitniis {
+    margin: 0;
+}
+
 .logoimg {
     width: 100px;
     height: 100px;
@@ -84,8 +89,11 @@ footer {
 </style>
 </head>
 <body>
+<header>
+<h1 class="fitniis">fitniis</h1>
+</header>
 
-<form action="signup_exec.php" method="post" class="mt-5" style="text-align: center;">
+<form action="signup_exec.php" method="post" class="mt-3" style="text-align: center;">
 <h1 class="actitle mb-3">アカウント作成</h1>
 <div>
     <label class="forminfo">お名前</label><br>

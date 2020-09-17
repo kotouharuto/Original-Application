@@ -25,6 +25,10 @@ crossorigin="anonymous">
     padding: 0;
     }
 
+    .datetext {
+        color: red;
+    }
+
     .container {
     max-width:600px;
     margin:0 auto;
@@ -467,14 +471,13 @@ crossorigin="anonymous">
         <label class="nav-unshown" id="nav-close" for="nav-input"></label>
         <div id="nav-content">
             <ul>
-                <li><a href="#">ホーム</a></li>
+                <li><a href="">ホーム</a></li>
                 <div class="humline"></div>
                 <li><a href="#">筋トレ</a></li>
                 <div class="humline"></div>
                 <li><a href="#">タイマー</a></li>
                 <div class="humline"></div>
-                <li><a href="#">SNS</a></li>
-                <div class="humline"></div>
+                
             </ul>
         </div>
     </div>
@@ -484,6 +487,7 @@ crossorigin="anonymous">
 
 <div id="wrapper">
 
+<p style="text-align: center;"><span class="datetext">{$datetext}</span> が選択されています。</p>
 
 <table class="table table-hover mt-5">
     <thead>
@@ -527,21 +531,21 @@ crossorigin="anonymous">
         <!-- <div class="navline"></div> -->
         <ul class="nav-list">
             <li class="nav-item">
-                <a href="home.php">
-                    <i class="fas fa-home"></i>
-                    <span>ホーム</span>
-                </a>
-            </li>
-            <li class="nav-item">
                 <a href="calendar.php">
                   <i class="fas fa-star"></i>
                   <span>筋トレ</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="stopwatch.html">
+                <a href="stopwatch.php">
                   <i class="fas fa-history"></i>
                   <span>タイマー</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="logout.php">
+                  <i class="fas fa-history"></i>
+                  <span>ログアウト</span>
                 </a>
             </li>
         </ul>
