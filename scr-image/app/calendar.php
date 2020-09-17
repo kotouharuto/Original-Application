@@ -4,6 +4,10 @@ require_once '../libs/init.php';
 //今日の日付を持ったオブジェクト
 $current_date = new DateTime();
 
+if(!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+}
+
 //日曜日の始まりにする処理
 if(0 < $current_date->format('w')) {
     $current_date->modify(sprintf('- %d days', $current_date->format('w')));
