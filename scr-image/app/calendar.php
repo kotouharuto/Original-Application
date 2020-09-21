@@ -1,12 +1,12 @@
 <?php
 require_once '../libs/init.php';
+if(!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+}
 
 //今日の日付を持ったオブジェクト
 $current_date = new DateTime();
 
-if(!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-}
 
 //日曜日の始まりにする処理
 if(0 < $current_date->format('w')) {
@@ -20,6 +20,7 @@ while($current_date < $last_date) {
     $current_date->modify('+ 1 day');
 }
 
+//Smarty接続
 $smarty = getSmarty();
 $smarty->assign('dates', $dates);
 $smarty->display('calendar.tpl');

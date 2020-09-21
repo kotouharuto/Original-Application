@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-</body>
-</html>
-
 <?php
 
 require_once "../libs/init.php";
 db_connect();
 
+// 空文字、数字以外があるかチェック
 EmptNumCheck();
-
-?>
-<a href="menupost.php">メニューを確認する</a>
