@@ -1,9 +1,5 @@
 <?php
-    require_once "../libs/init.php";
-    
-    $pdo = db_connect();
-    
-        
+    require_once "../libs/init.php";  
     $username = $_POST['username'];
         
     //POSTのValidate
@@ -20,21 +16,12 @@
             // エラ〜メッセージをsignup.phpに表示させる
             header("Location: signup.php?error=パスワードは半角英数字をそれぞれ1文字以上含んだ8~30文字以内で設定してください。");
             // header("Location: signup.php?error=password_format");
-            
-
         }
         
         // データ挿入
         try {
-            $sql = "INSERT INTO users (username, email, password) VALUES (:username, :email, :password)";
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute([$username, $email, $password]);
-            ?> 
-        <?php
-        header("Location: login.php");
+            $pdo = db_connect();
+            Create_User($pdo, $_POST['username'], $_POST['email'], $_POST['password']);
+            header("Location: login.php");
     } catch(PDOExceptiomn $Exception) {
     }
-
-
-
-

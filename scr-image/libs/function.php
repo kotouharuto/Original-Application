@@ -1,5 +1,7 @@
 <?php
 
+use App\Request;
+
 //DB接続
 function db_connect() 
 {
@@ -33,11 +35,6 @@ function fetchAllMenus($pdo, $user_id, $date) {
     return $stmt->fetchAll();
 }
 
-//メニュー追加
-// function addTrainingMenu($menu, $set, $set_num)
-// {
-
-// }
 
 //メニュー削除
 function deleteTrainingMenu($pdo, $id, $date)
@@ -61,17 +58,11 @@ function EmptNumCheck(){
     $setnumnull = empty($setnum);
     
     if($menunull or $numnull or $setnumnull) {
-        print "正しく入力してください";
-        print "<br>";
-        print "<br>";
+        header("Location: menupost.php?error=正しく入力してください");
     } else if(is_numeric($num) == false) {
-        print "正しく入力してください";
-        print "<br>";
-        print "<br>";
+        header("Location: menupost.php?error=正しく入力してください");
     } else if(is_numeric($setnum) == false) {
-        print "正しく入力してください";
-        print "<br>";
-        print "<br>";
+        header("Location: menupost.php?error=正しく入力してください");
     } else {
         require_once "insert.php";
         print '『'.$menu. '』を';
@@ -98,17 +89,47 @@ function INSERT($pdo, $date, $user_id, $memu, $num, $setnum) {
     $pdo->commit();
 }
 
+//ログアウト処理
+function Logout() {
+    require_once "../libs/init.php";
+    $_SESSION = array();
+    session_destroy();
+    header("Location: login.php");
+}
+
 //Smarty接続
-function getSmarty()
-{
+function getSmarty(){
     require_once("../libs/smarty/Smarty.class.php");
     $smarty = new Smarty();
     $smarty->template_dir = APPLICATION_DIR. 'libs/templates';
     $smarty->compile_dir  = APPLICATION_DIR. 'libs/templates_c';
     $smarty->config_dir   = APPLICATION_DIR. 'libs/config';
     $smarty->cache_dir    = APPLICATION_DIR. 'libs/cache';
-
+    
     return $smarty;
 }
 
+
+//新規アカウント作成
+function Create_User($pdo, $username, $email, $password) {
+    $pdo = db_connect();
+    $sql = "INSERT INTO users (username, email, password) VALUES (:username, :email, :password)";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':username', Request::get('username'), PDO::PARAM_STR);
+    $stmt->bindValue(':email', Request::get('email'), PDO::PARAM_STR);
+    $stmt->bindValue(':password', Request::get('password'), PDO::PARAM_STR);
+    $stmt->execute();
+    return $stmt;
+}
+
+//email検索
+function Search_Email($pdo, $email) {
+    $pdo = db_connect();
+    $sql = "SELECT * FROM users WHERE email = :email";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':email', $email, PDO::PARAM_INT);
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $row;
+}
 ?>
