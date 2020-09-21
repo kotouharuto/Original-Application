@@ -519,9 +519,9 @@ crossorigin="anonymous">
         <h2>メニューを追加しましょう！</h2>
         </div>
         <input type="hidden" name="date" value="{$date}"></input>
-        <input type="text" name="menu" placeholder="トレーニングメニュー"/><br />
-        <input type="number" name="num" placeholder="回数or秒数" />
-        <input  type="number" name="setnum" placeholder="セット数"/><br />
+        <input type="text" name="menu" placeholder="トレーニングメニュー" required/><br />
+        <input type="number" name="num" placeholder="回数or秒数" required/>
+        <input  type="number" name="setnum" placeholder="セット数" required/><br/>
         
         <button id="submit" name="insert" type="submit">追加</button>
     </div>
