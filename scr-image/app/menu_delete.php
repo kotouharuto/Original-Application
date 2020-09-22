@@ -9,14 +9,7 @@ $date = Request::get('date');
 try {
     $pdo->beginTransaction();
     $id = $_REQUEST['id'];
-    var_dump($date);
-    // deleteTrainingMenu($pdo, $id, $date);
-    $sql = "DELETE FROM `trainingmenu` WHERE `id` = :id AND date = :date";
-    $stmt = $pdo->prepare($sql);
-    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-    $stmt->bindValue(':date', $date, PDO::PARAM_INT);
-    $stmt->execute();
-    $pdo->commit();
+    deleteTrainingMenu($pdo, $id, $date);
 } catch(PDOException $Exception) {
     $pdo->rollBack();
     print 'エラー：'. $Exception->getMessage();

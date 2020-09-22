@@ -30,7 +30,7 @@ crossorigin="anonymous">
     }
 
     .container {
-    max-width:600px;
+    width: 60%;
     margin:0 auto;
     text-align:center;
     -webkit-border-radius:6px;
@@ -514,7 +514,7 @@ crossorigin="anonymous">
 </table>
 
 <form  action="insert.php" id="contact" method="post">
-    <div class="container">
+    <div class="container mt-5">
         <div class="head">
         <h2>メニューを追加しましょう！</h2>
         </div>

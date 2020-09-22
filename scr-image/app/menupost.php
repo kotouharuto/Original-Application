@@ -18,6 +18,7 @@ $datetime = Request::get('date');
 
 // $datetimeをただの文字じゃなくする
 $date = date('Ymd',strtotime($datetime));
+
 //menupost.phpで日付を表示するための変数
 $datetext = date('Y年m月d日',strtotime($datetime));
 

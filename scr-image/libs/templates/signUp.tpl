@@ -17,7 +17,7 @@ body {
 }
 
 .fitniis {
-    margin: 0;
+    
 }
 
 .logoimg {
@@ -90,7 +90,7 @@ footer {
 </head>
 <body>
 <header>
-<h1 class="fitniis">fitniis</h1>
+<h1 class="fitniis ml-4">fitniis</h1>
 </header>
 
 <form action="signup_exec.php" method="post" class="mt-3" style="text-align: center;">

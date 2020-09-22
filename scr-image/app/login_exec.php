@@ -11,17 +11,12 @@ function Login() {
     $email = $_POST['email'];
     $_SESSION['email'] = $_POST['email'];
     $password = $_POST['password'];
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        header('Location: login.php?error=入力された値が不正です。');
-        return false;
-    }
     
     
     // //DB内でPOSTされたメールアドレスを検索
     try {
         $pdo = db_connect();
         $row = Search_Email($pdo, $email);
-        var_dump($row);
     } catch(\Exception $e) {
         echo $e->getMessage();
     }
@@ -41,8 +36,10 @@ function Login() {
         ?>
         <div class="alert alert-primary" role="alert">ログインに成功しました。</div>
         <?php
+        // ログインに成功したらcalendarphpリダイレクト
         header("Location: calendar.php");
     } else {
+        // ログインに失敗したらlogin.phpにリダイレクト
         header("Location: login.php?error=メールアドレス又はパスワードが間違っています。");
         return false;
     }

@@ -36,15 +36,6 @@ function fetchAllMenus($pdo, $user_id, $date) {
 }
 
 
-//メニュー削除
-function deleteTrainingMenu($pdo, $id, $date)
-{
-    $sql = "DELETE FROM `trainingmenu` WHERE id = :id AND date = :date";
-    $stmt = $pdo->prepare($sql);
-    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-    $stmt->bindValue(':date', $date, PDO::PARAM_INT);
-    $stmt->execute();
-}
 
 //空、数字チェック
 function EmptNumCheck(){
@@ -76,15 +67,27 @@ function EmptNumCheck(){
     }
 }
 
-// 挿入処理
-function INSERT($pdo, $date, $user_id, $memu, $num, $setnum) {
+// メニュー挿入処理
+function INSERT($pdo, $date, $user_id, $menu, $num, $setnum) 
+{
     $sql = "INSERT INTO trainingmenu (user_id, date, menu, num, setnum) VALUES (:user_id, :date, :menu, :num, :setnum)";
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':user_id', $_SESSION['user_id'], PDO::PARAM_STR);
     $stmt->bindValue(':date', $date, PDO::PARAM_STR);
-    $stmt->bindValue(':menu', $_POST['menu'], PDO::PARAM_STR);
-    $stmt->bindValue(':num', $_POST['num'], PDO::PARAM_STR);
-    $stmt->bindValue(':setnum', $_POST['setnum'], PDO::PARAM_STR);
+    $stmt->bindValue(':menu', $menu, PDO::PARAM_STR);
+    $stmt->bindValue(':num', $num, PDO::PARAM_STR);
+    $stmt->bindValue(':setnum', $setnum, PDO::PARAM_STR);
+    $stmt->execute();
+    $pdo->commit();
+}
+
+//メニュー削除
+function deleteTrainingMenu($pdo, $id, $date)
+{
+    $sql = "DELETE FROM `trainingmenu` WHERE id = :id AND date = :date";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $stmt->bindValue(':date', $date, PDO::PARAM_INT);
     $stmt->execute();
     $pdo->commit();
 }
@@ -112,12 +115,13 @@ function getSmarty(){
 
 //新規アカウント作成
 function Create_User($pdo, $username, $email, $password) {
+    global $username, $email, $password;
     $pdo = db_connect();
     $sql = "INSERT INTO users (username, email, password) VALUES (:username, :email, :password)";
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':username', Request::get('username'), PDO::PARAM_STR);
     $stmt->bindValue(':email', Request::get('email'), PDO::PARAM_STR);
-    $stmt->bindValue(':password', Request::get('password'), PDO::PARAM_STR);
+    $stmt->bindValue(':password', $password, PDO::PARAM_STR);
     $stmt->execute();
     return $stmt;
 }

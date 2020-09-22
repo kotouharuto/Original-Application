@@ -6,6 +6,7 @@ if (isset($_SESSION['user_id'])) {
     header("Location: calendar.php");
 }
 
+// Smarty接続
 $smarty = getSmarty();
 
 //エラーメッセージを表示

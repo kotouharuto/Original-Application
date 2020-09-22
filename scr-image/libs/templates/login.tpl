@@ -111,7 +111,7 @@ footer {
 </head>
 <body>
 <header>
-<h1 class="fitniis">fitniis</h1>
+<h1 class="fitniis ml-4">fitniis</h1>
 </header>
 <h1 class="logintitle mt-3">新しいフィットネス生活を始めましょう</h1><br>
 
