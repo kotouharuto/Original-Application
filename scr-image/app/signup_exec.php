@@ -6,6 +6,12 @@
     if (!$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
         header("Location: signup.php?error=入力された値が不正です。");
     }
+
+    // メールアドレスの重複チェック
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        header('Location: signup.php?error=入力された値が不正です。');
+        return false;
+    }
         
         // パスワードの正規表現
         if (preg_match('/\A(?=.*[a-z])(?=.*?\d)[a-z\d]{8,30}+\z/i', $_POST['password'])) {
@@ -19,9 +25,11 @@
         }
         
         // データ挿入
-        try {
-            $pdo = db_connect();
-            Create_User($pdo, $_POST['username'], $_POST['email'], $_POST['password']);
-            header("Location: login.php");
+    try {
+        $pdo = db_connect();
+        Create_User($pdo, $username, $email, $password);
+        header("Location: login.php");
     } catch(PDOExceptiomn $Exception) {
+        $pdo->rollback();
+        print "error：". $Exception->getMessage();
     }
