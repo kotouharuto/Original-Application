@@ -7,4 +7,4 @@ $smarty = getSmarty();
 if (isset($_GET['error'])) {
     $smarty->assign('error', $_GET['error']);
 }
-$smarty->display('signUp.tpl');
+$smarty->display('signup.tpl');

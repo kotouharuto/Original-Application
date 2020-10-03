@@ -1,4 +1,4 @@
-{* libs/template/sign_up.tpl *}
+{* libs/template/signUp.tpl *}
 
 {* 新規登録ファイル *}
 <!DOCTYPE html>
