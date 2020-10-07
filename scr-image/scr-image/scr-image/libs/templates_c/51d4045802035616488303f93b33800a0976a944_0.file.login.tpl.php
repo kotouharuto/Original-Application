@@ -1,6 +1,27 @@
-{* Smarty_html/login.tpl *}
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2020-10-02 09:11:05
+  from '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/login.tpl' */
 
-{* ログインファイル *}
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_5f76eea9e9bbc7_29605664',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '51d4045802035616488303f93b33800a0976a944' => 
+    array (
+      0 => '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/login.tpl',
+      1 => 1601617294,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5f76eea9e9bbc7_29605664 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -129,9 +150,10 @@ footer {
     <button type="submit" class="accbtn" name="login">ログインする</button>
 </form>
 
-{if isset($error)}
-    <p class="err-message mt-5 mb-3">※{$error}</p>
-{/if}
+<?php if ((isset($_smarty_tpl->tpl_vars['error']->value))) {?>
+    <p class="err-message mt-5 mb-3">※<?php echo $_smarty_tpl->tpl_vars['error']->value;?>
+</p>
+<?php }?>
 <div class="signUpbox">
     <p>アカウントをお持ちでない方はこちらから</p>
     <a href="sign_up.php">アカウントを作成する</a>
@@ -142,4 +164,5 @@ footer {
 </footer>
 
 </body>
-</html>
+</html><?php }
+}

@@ -1,0 +1,5 @@
+.idea
+libs/cache/*
+libs/templates_c/*
+vendor
+.env

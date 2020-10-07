@@ -1,6 +1,27 @@
-{* Smarty_html/login.tpl *}
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2020-09-03 12:14:40
+  from '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/login.tpl' */
 
-{* ログインファイル *}
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_5f50de304d6666_41024591',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '1c5c4fd1e24f78f33eed3b674a84e2d8bf67b2f7' => 
+    array (
+      0 => '/Applications/MAMP/htdocs/Original-Application/scr-image/libs/templates/login.tpl',
+      1 => 1599044814,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5f50de304d6666_41024591 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -17,11 +38,6 @@ crossorigin="anonymous">
     text-align: center;
     font-weight: bold;
 }
-
-.fitniis {
-    margin: 0;
-}
-
 input {
     width: 50%;
     height: 40px;
@@ -96,10 +112,6 @@ footer {
     bottom: 0;
 }
 
-.logintitle {
-    margin: 0;
-}
-
 .err-message {
     text-align: center;
     color: red;
@@ -110,10 +122,7 @@ footer {
 <title>ログインページ</title>
 </head>
 <body>
-<header>
-<h1 class="fitniis ml-4">fitniis</h1>
-</header>
-<h1 class="logintitle mt-3">新しいフィットネス生活を始めましょう</h1><br>
+<h1 class="logintitle mt-5">新しいフィットネス生活を始めましょう</h1><br>
 
 <form action="login_exec.php" method="POST">
     <div class="emailbox">
@@ -129,12 +138,13 @@ footer {
     <button type="submit" class="accbtn" name="login">ログインする</button>
 </form>
 
-{if isset($error)}
-    <p class="err-message mt-5 mb-3">※{$error}</p>
-{/if}
+<?php if ((isset($_smarty_tpl->tpl_vars['error']->value))) {?>
+    <p class="err-message mt-5 mb-3">※<?php echo $_smarty_tpl->tpl_vars['error']->value;?>
+</p>
+<?php }?>
 <div class="signUpbox">
     <p>アカウントをお持ちでない方はこちらから</p>
-    <a href="sign_up.php">アカウントを作成する</a>
+    <a href="signup.php">アカウントを作成する</a>
 </div>
 
 <footer>
@@ -142,4 +152,5 @@ footer {
 </footer>
 
 </body>
-</html>
+</html><?php }
+}

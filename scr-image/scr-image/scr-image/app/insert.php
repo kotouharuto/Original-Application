@@ -16,7 +16,7 @@ if(isset($_REQUEST['insert'])) {
         // バリデーション
         EmptNumCheck();
         // メニュー挿入処理
-        INSERT($pdo, $date, $_SESSION['user_id'], $menu, $num, $setnum);
+        INSERT($pdo, $date, $user_id, $menu, $num, $setnum);
         // 挿入が完了したらリダイレクト
         header('Location: menupost.php?date='. $date);
     } catch(PDOException $Exception) {
