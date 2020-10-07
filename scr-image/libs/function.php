@@ -5,10 +5,11 @@ use App\Request;
 //DB接続
 function db_connect() 
 {
-    $db_user = $_ENV['DB_USER'];
-    $db_pass = $_ENV['DB_PASS'];
-    $db_host = 'localhost';
-    $db_name = 'tr_ng';
+    $db_user = 'fitniiis0321_t';
+    $db_pass = 'ktharuto0321';
+    $db_host = 'mysql1.php.xdomain.ne.jp';
+    // $db_name = 'tr_ng';
+    $db_name = 'fitniis0321_trng';
     $db_type = 'mysql';
 
     $dsn = "$db_type:host=$db_host;dbname=$db_name;charset=utf8";
@@ -25,10 +26,8 @@ function db_connect()
 
 //メニュー取得
 function fetchAllMenus($pdo, $user_id, $date) {
-    $pdo = db_connect();
     $sql = "SELECT * FROM trainingmenu WHERE user_id = :user_id AND date = :date";
     $stmt = $pdo->prepare($sql);
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
     $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
     $stmt->bindValue(':date', $date, PDO::PARAM_INT);
     $stmt->execute();
@@ -49,11 +48,11 @@ function EmptNumCheck(){
     $setnumnull = empty($setnum);
     
     if($menunull or $numnull or $setnumnull) {
-        header("Location: menupost.php?error=正しく入力してください");
+        // header("Location: menupost.php?error=正しく入力してください");
     } else if(is_numeric($num) == false) {
-        header("Location: menupost.php?error=正しく入力してください");
+        // header("Location: menupost.php?error=正しく入力してください");
     } else if(is_numeric($setnum) == false) {
-        header("Location: menupost.php?error=正しく入力してください");
+        // header("Location: menupost.php?error=正しく入力してください");
     } else {
         require_once "insert.php";
         print '『'.$menu. '』を';
@@ -62,7 +61,7 @@ function EmptNumCheck(){
         print '<br>';
         print '<br>';
         if(isset($_POST['menu'])) {
-            header("Location:menupost.php");
+            // header("Location:menupost.php");
         }
     }
 }
@@ -70,7 +69,7 @@ function EmptNumCheck(){
 // メニュー挿入処理
 function INSERT($pdo, $date, $user_id, $menu, $num, $setnum) 
 {
-    $sql = "INSERT INTO trainingmenu (user_id, date, menu, num, setnum) VALUES (:user_id, :date, :menu, :num, :setnum)";
+    $sql = "INSERT INTO trainingmenu (user_id, date, menu, num, setnum) VALUES (:user_id, :date, :menu, :num, :setnum) WHERE user_id = :user_id";
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':user_id', $_SESSION['user_id'], PDO::PARAM_STR);
     $stmt->bindValue(':date', $date, PDO::PARAM_STR);
@@ -102,7 +101,6 @@ function Logout() {
 
 //Smarty接続
 function getSmarty(){
-    require_once("../libs/smarty/Smarty.class.php");
     $smarty = new Smarty();
     $smarty->template_dir = APPLICATION_DIR. 'libs/templates';
     $smarty->compile_dir  = APPLICATION_DIR. 'libs/templates_c';
@@ -115,12 +113,10 @@ function getSmarty(){
 
 //新規アカウント作成
 function Create_User($pdo, $username, $email, $password) {
-    global $username, $email, $password;
-    $pdo = db_connect();
     $sql = "INSERT INTO users (username, email, password) VALUES (:username, :email, :password)";
     $stmt = $pdo->prepare($sql);
-    $stmt->bindValue(':username', Request::get('username'), PDO::PARAM_STR);
-    $stmt->bindValue(':email', Request::get('email'), PDO::PARAM_STR);
+    $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+    $stmt->bindValue(':email', $email, PDO::PARAM_STR);
     $stmt->bindValue(':password', $password, PDO::PARAM_STR);
     $stmt->execute();
     return $stmt;
@@ -128,10 +124,9 @@ function Create_User($pdo, $username, $email, $password) {
 
 //email検索
 function Search_Email($pdo, $email) {
-    $pdo = db_connect();
     $sql = "SELECT * FROM users WHERE email = :email";
     $stmt = $pdo->prepare($sql);
-    $stmt->bindValue(':email', $email, PDO::PARAM_INT);
+    $stmt->bindValue(':email', $email, PDO::PARAM_STR);
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     return $row;
