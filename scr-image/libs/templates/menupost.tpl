@@ -169,150 +169,6 @@ crossorigin="anonymous">
         }
     }
 
-
-
-
-    /* スマホ、タブレット */
-    @media (max-width:1130px) {
-        body {
-            height: 1500px;
-            background: white;
-        }
-        .title {
-            text-align: center;
-            letter-spacing: 3px;
-        }
-
-        .box {
-            width: 60px;
-            height: 60px;
-            background: white;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 50px;
-            background: #F5F5F5;
-        }
-
-        h1 {
-            font-weight: bold;
-            width: 10000px;
-            height: 100px;
-            text-align: center;
-            letter-spacing: 1px;
-            /* position: relative;
-            display: inline-block;
-            margin-bottom: 1em; */
-        }
-        
-        .todo {
-            display: flex;
-            color: #2d8fdd;
-            border-left: solid 6px #2d8fdd;/*左側の線*/
-            background: #f1f8ff;/*背景色*/
-            margin-bottom: 3px;/*下のバーとの余白*/
-            line-height: 1.5;
-            padding: 0.5em;
-            list-style-type: none!important;/*ポチ消す*/
-            width: 90%;
-            margin: 0 auto;
-        }
-        .traning {
-            margin: 0 auto;
-        }
-
-        main {
-            flex: 1;
-        }
-
-        body {
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        .nav-item i {
-            display: block;
-            font-size: 24px;
-        }
-
-
-        .nav-list {
-            display: table;
-            padding: 0;
-            list-style: none;
-            text-align: center;
-        }
-
-        .nav-item {
-        display: table-cell;
-        /* padding: 2px 0px; */
-        }
-
-        .nav-list {
-            table-layout: fixed;
-            width: 100%;
-        }
-
-        .nav-list {
-            border-collapse: collapse;
-        }
-
-        .nav-item {
-        }
-
-        .navline {
-            background: gray;
-            width: 100%;
-            height: 1px;
-        }
-
-        .global-nav {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            background: #F5F5F5;
-        }
-
-        .nav-item a span {
-            display: block;
-            font-size: 15px;
-            color: black;
-            opacity: 1 !important;
-        }
-
-        .footer {
-            margin-bottom: 24px;
-        }
-
-        header {
-            display: flex;
-        }
-
-        .nowtitle {
-            font-size: 30px;
-            font-weight: normal;
-            margin: 0 auto;
-            font-family: ;
-        }
-
-        .addurl {
-            text-align: center;
-        }
-
-        .header-logo-menu {
-            display:none;
-        }
-    }
-
-
-
-    /* PC */
-    @media (min-width:1131px) {
         body {
             padding: 0;
             margin: 0;
@@ -450,10 +306,10 @@ crossorigin="anonymous">
         .humline {
             width: 100%;
             height: 1px;
-            background: black;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            background: rgb(206, 198, 198);
         }
-
-    }
 </style>
 
 </head>
@@ -471,13 +327,12 @@ crossorigin="anonymous">
         <label class="nav-unshown" id="nav-close" for="nav-input"></label>
         <div id="nav-content">
             <ul>
-                <li><a href="">ホーム</a></li>
+                <li class="mt-4"><a href="calendar.php">筋トレ</a></li>
                 <div class="humline"></div>
-                <li><a href="#">筋トレ</a></li>
+                <li><a href="stopwatch.html">ストップウォッチ</a></li>
                 <div class="humline"></div>
-                <li><a href="#">タイマー</a></li>
-                <div class="humline"></div>
-                
+                <li><a href="logout.php">ログアウト</a></li>
+                <div class="humline"></div> 
             </ul>
         </div>
     </div>
@@ -526,32 +381,6 @@ crossorigin="anonymous">
         <button id="submit" name="insert" type="submit">追加</button>
     </div>
 </form>
-
-<nav class="global-nav">
-        <!-- <div class="navline"></div> -->
-        <ul class="nav-list">
-            <li class="nav-item">
-                <a href="calendar.php">
-                  <i class="fas fa-star"></i>
-                  <span>筋トレ</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="stopwatch.html">
-                  <i class="fas fa-history"></i>
-                  <span>タイマー</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="logout.php">
-                  <i class="fas fa-history"></i>
-                  <span>ログアウト</span>
-                </a>
-            </li>
-        </ul>
-        </div>
-    </nav>
-
 
 <script>
 $(function(){
