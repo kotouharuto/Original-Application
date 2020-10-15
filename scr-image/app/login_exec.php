@@ -33,9 +33,6 @@ function Login() {
         $_SESSION['user_id'] = $row['user_id'];
         $_SESSION['USERNAME'] = $row['username'];    
         $user_id = $_SESSION['user_id'];
-        ?>
-        <div class="alert alert-primary" role="alert">ログインに成功しました。</div>
-        <?php
         // ログインに成功したらcalendarphpリダイレクト
         header("Location: calendar.php");
     } else {

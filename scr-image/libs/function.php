@@ -9,7 +9,7 @@ function db_connect()
     $db_pass = 'ktharuto0321';
     $db_host = 'mysql1.php.xdomain.ne.jp';
     // $db_name = 'tr_ng';
-    $db_name = 'fitniis0321_trng';
+    $db_name = 'fitniiis0321_trng';
     $db_type = 'mysql';
 
     $dsn = "$db_type:host=$db_host;dbname=$db_name;charset=utf8";
@@ -34,42 +34,10 @@ function fetchAllMenus($pdo, $user_id, $date) {
     return $stmt->fetchAll();
 }
 
-
-
-//空、数字チェック
-function EmptNumCheck(){
-    $menu = $_POST['menu'];
-    $menunull = empty($menu);
-    
-    $num = $_POST['num'];
-    $numnull = empty($num);
-    
-    $setnum = $_POST['setnum'];
-    $setnumnull = empty($setnum);
-    
-    if($menunull or $numnull or $setnumnull) {
-        // header("Location: menupost.php?error=正しく入力してください");
-    } else if(is_numeric($num) == false) {
-        // header("Location: menupost.php?error=正しく入力してください");
-    } else if(is_numeric($setnum) == false) {
-        // header("Location: menupost.php?error=正しく入力してください");
-    } else {
-        require_once "insert.php";
-        print '『'.$menu. '』を';
-        print $num.'(回or秒)、';
-        print $setnum. 'セットで追加しました!';
-        print '<br>';
-        print '<br>';
-        if(isset($_POST['menu'])) {
-            // header("Location:menupost.php");
-        }
-    }
-}
-
 // メニュー挿入処理
 function INSERT($pdo, $date, $user_id, $menu, $num, $setnum) 
 {
-    $sql = "INSERT INTO trainingmenu (user_id, date, menu, num, setnum) VALUES (:user_id, :date, :menu, :num, :setnum) WHERE user_id = :user_id";
+    $sql = "INSERT INTO trainingmenu (user_id, date, menu, num, setnum) VALUES (:user_id, :date, :menu, :num, :setnum)";
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':user_id', $_SESSION['user_id'], PDO::PARAM_STR);
     $stmt->bindValue(':date', $date, PDO::PARAM_STR);

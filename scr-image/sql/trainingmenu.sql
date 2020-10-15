@@ -2,8 +2,8 @@
 -- version 4.9.3
 -- https://www.phpmyadmin.net/
 --
--- ホスト: localhost:8889
--- 生成日時: 2020 年 7 月 29 日 10:27
+-- ホスト: localhost:3306
+-- 生成日時: 2020 年 10 月 11 日 04:48
 -- サーバのバージョン： 5.7.26
 -- PHP のバージョン: 7.4.2
 
@@ -21,7 +21,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `trainingmenu` (
+  `user_id` int(11) NOT NULL,
   `id` int(11) NOT NULL,
+  `date` int(11) NOT NULL,
   `menu` varchar(100) DEFAULT NULL,
   `num` int(11) NOT NULL,
   `setnum` int(11) DEFAULT NULL
@@ -46,4 +48,3 @@ ALTER TABLE `trainingmenu`
 --
 ALTER TABLE `trainingmenu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-

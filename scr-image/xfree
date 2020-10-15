@@ -1,0 +1,5 @@
+DB_TYPE=mysql
+DB_HOST=mysql1.php.xdomain.ne.jp
+DB_NAME=fitniiis0321_trng
+DB_USER=fitniiis0321_t
+DB_PASS=ktharuto0321
