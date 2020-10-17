@@ -1,3 +1,6 @@
+# サービスURL
+https://harutok0321.wixsite.com/fitniis
+
 # アプリケーションの内容
 - トレーニングをtodoリストで管理できる
 - このアプリで筋トレが便利になる
