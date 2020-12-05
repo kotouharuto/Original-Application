@@ -24,4 +24,5 @@ while($current_date < $last_date) {
 //Smarty接続
 $smarty = getSmarty();
 $smarty->assign('dates', $dates);
+$smarty->assign('USERNAME', $_SESSION['USERNAME']);
 $smarty->display('calendar.tpl');
