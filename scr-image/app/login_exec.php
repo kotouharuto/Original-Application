@@ -31,7 +31,7 @@ function Login() {
     if(password_verify($password, $row['password'])) {
         session_regenerate_id(true); //session_idを新しく生成し、置き換える
         $_SESSION['user_id'] = $row['user_id'];
-        $_SESSION['USERNAME'] = $row['username'];    
+        $_SESSION['USERNAME'] = $row['username'];
         $user_id = $_SESSION['user_id'];
         // ログインに成功したらcalendarphpリダイレクト
         header("Location: calendar.php");

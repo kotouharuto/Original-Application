@@ -319,7 +319,7 @@ crossorigin="anonymous">
 <body>
 <div class="box"></div>
 <header>
-    <h1 class="nowtitle">筋トレ</h1>
+    <h1 class="nowtitle">筋トレ </h1>
     <div class="header-logo-menu">
     <div id="nav-drawer" class="mt-3 ml-3">
         <input id="nav-input" type="checkbox" class="nav-unshown">
