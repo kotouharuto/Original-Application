@@ -8,38 +8,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
 <style>
-    body {
-    }
+    .global-nav {
+            display: none;
+        }
 
-    header {
-        background: #F5F5F5;
-    }
-
-    h2 {
-        text-align: center;
-        font-weight: bold;
-    }
-
-    .date_btn {
-        background-color:#49a9d4;
-        border-radius: 5px;
-        margin: 0 auto;
-        text-align: center;
-        height: 100px;
-        width: 60%;
-        margin-top: 70px;
-    }
-
-    .date_btn a {
-        text-decoration: none;
-        color: black;
-        line-height: 90px;
-        font-size: 18px;
-        font-weight: bold;
-    }
-
-    .datebox {
-    }
+        .logo-area {
+            font-size: 35px;
+            text-align: center;
+        }
 
     .nowtitle {
             display: none;
@@ -48,13 +24,13 @@
         .title {
             font-size: 25px;
             position: relative;
-            top: 50px;
+            top: 40px;
         }
 
         #nav-drawer {
             position: relative;
-            margin-top: 16px;
-            margin-left: 16px;
+            margin-top: 10px;
+            margin-left: 10px;
         }
 
         /*チェックボックス等は非表示に*/
@@ -81,9 +57,11 @@
         content: '';
         cursor: pointer;
         }
+        
         #nav-open span:before {
         bottom: -8px;
         }
+
         #nav-open span:after {
         bottom: -16px;
         }
@@ -97,7 +75,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: black;
+        /* background: black; */
         opacity: 0;
         transition: .3s ease-in-out;
         }
@@ -149,6 +127,7 @@
             text-align:center;
             margin:auto;
             font-size:  25px;
+            
         }
 
         ul {
@@ -166,11 +145,41 @@
             margin-bottom: 40px;
             background: rgb(206, 198, 198);
         }
+
+        .date_announce {
+            text-align: center;
+            color: red;
+            font-weight: bold;
+        }
+
+        .date_btn {
+            width: 70%;
+            height: 100px;
+            background: skyblue;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 40px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin: 0 auto;
+        }
+
+        .date_btn a {
+            color: black;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .margin-box {
+            margin-top: 40px;
+            margin-top: 40px;
+        }
+}
 </style>
 </head>
 <body>
 <header>
-    <h1 class="nowtitle">カレンダー</h1>
+  <h1 class="nowtitle">カレンダー</h1>
     <div class="header-logo-menu">
     <div id="nav-drawer" class="mt-3 ml-3">
         <input id="nav-input" type="checkbox" class="nav-unshown">
@@ -178,7 +187,7 @@
         <label class="nav-unshown" id="nav-close" for="nav-input"></label>
         <div id="nav-content">
             <ul>
-                <li><a href="calendar.php">筋トレ</a></li>
+                <li class="mt-4"><a href="calendar.php">筋トレ</a></li>
                 <div class="humline"></div>
                 <li><a href="stopwatch.html">ストップウォッチ</a></li>
                 <div class="humline"></div>
@@ -193,9 +202,11 @@
 
 <h2 class="date_announce">メニューを追加したい日にちを選択してください</h2>
 {foreach $dates as $date}
+<div class="margin-box"></div>
 <div class="date_btn">
     <a href="menupost.php?date={$date->format('Ymd')}">{$date->format('Y/m/d')}</a>
 </div><br>
+<div class="margin-box"></div>
 {/foreach}
 
 </body>
