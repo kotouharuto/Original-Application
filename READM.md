@@ -1,5 +1,8 @@
-# サービス名
-fitniis
+# サービスの名前
+「fitniis」
+
+# サービスURL
+https://harutok0321.wixsite.com/fitniis
 
 # アプリケーションの内容
 - トレーニングをtodoリストで管理できる
