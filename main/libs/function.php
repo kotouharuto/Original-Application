@@ -2,14 +2,19 @@
 
 use App\Request;
 
-//DB接続
+//DB接続(トレーニングメニュー)
 function db_connect() 
 {
-    $db_user = 'fitniiis0321_t';
-    $db_pass = 'ktharuto0321';
-    $db_host = 'mysql1.php.xdomain.ne.jp';
-    // $db_name = 'tr_ng';
-    $db_name = 'fitniiis0321_trng';
+    // $db_user = 'fitniiis0321_t';
+    // $db_pass = 'ktharuto0321';
+    // $db_host = 'mysql1.php.xdomain.ne.jp';
+    // $db_name = 'fitniiis0321_trng';
+    // $db_type = 'mysql';
+
+    $db_user = "ktharuto";
+    $db_pass = "zgtkaisurper666";
+    $db_host = 'localhost';
+    $db_name = 'tr_ng';
     $db_type = 'mysql';
 
     $dsn = "$db_type:host=$db_host;dbname=$db_name;charset=utf8";
@@ -25,7 +30,8 @@ function db_connect()
 }
 
 //メニュー取得
-function fetchAllMenus($pdo, $user_id, $date) {
+function fetchAllMenus($pdo, $user_id, $date) 
+{
     $sql = "SELECT * FROM trainingmenu WHERE user_id = :user_id AND date = :date";
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
@@ -60,7 +66,8 @@ function deleteTrainingMenu($pdo, $id, $date)
 }
 
 //ログアウト処理
-function Logout() {
+function Logout() 
+{
     require_once "../libs/init.php";
     $_SESSION = array();
     session_destroy();
@@ -68,7 +75,8 @@ function Logout() {
 }
 
 //Smarty接続
-function getSmarty(){
+function getSmarty()
+{
     $smarty = new Smarty();
     $smarty->template_dir = APPLICATION_DIR. 'libs/templates';
     $smarty->compile_dir  = APPLICATION_DIR. 'libs/templates_c';
@@ -80,7 +88,8 @@ function getSmarty(){
 
 
 //新規アカウント作成
-function Create_User($pdo, $username, $email, $password) {
+function Create_User($pdo, $username, $email, $password) 
+{
     $sql = "INSERT INTO users (username, email, password) VALUES (:username, :email, :password)";
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':username', $username, PDO::PARAM_STR);
@@ -91,7 +100,8 @@ function Create_User($pdo, $username, $email, $password) {
 }
 
 //email検索
-function Search_Email($pdo, $email) {
+function Search_Email($pdo, $email) 
+{
     $sql = "SELECT * FROM users WHERE email = :email";
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':email', $email, PDO::PARAM_STR);
