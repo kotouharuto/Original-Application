@@ -15,7 +15,7 @@
 
     <form method="post" action="weight_chart.php">
         <p>今日の日付</p><input type="date" name="date">
-        <p>体重</p><input type="number" name="weight"><br><br>
+        <p>体重</p><input type="number" step="0.01" name="weight"><br><br>
         <input type="submit" value="送信">
     </form>
 
@@ -25,6 +25,7 @@ include('../libs/init.php');
 // DB接続
 $pdo = db_connect();
 $pdo->beginTransaction();
+
 
 // 入力されたデータの受け取り
 $date = $_POST['date'];
@@ -49,6 +50,8 @@ if($date and $weight) {
             $stmt->bindValue(':weight', $weight, PDO::PARAM_STR);
             $stmt->execute();
             $pdo->commit();
+            header("Location: weight_chart.php");
+            exit();
         } catch(PDOException $Exception) {
             $pdo->rollback();
             $Exception->getMessage();
