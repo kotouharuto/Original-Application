@@ -1,5 +1,5 @@
 <?php
-require_once '../libs/init.php';
+require_once "../libs/init.php";
 
 // ログインしていなかったらログインしてもらう
 if(!isset($_SESSION['user_id'])) {

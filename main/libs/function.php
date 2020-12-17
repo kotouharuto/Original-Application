@@ -13,9 +13,9 @@ function db_connect()
 
     $db_user = "ktharuto";
     $db_pass = "zgtkaisurper666";
-    $db_host = 'localhost';
-    $db_name = 'tr_ng';
-    $db_type = 'mysql';
+    $db_host = "localhost";
+    $db_name = "tr_ng";
+    $db_type = "mysql";
 
     $dsn = "$db_type:host=$db_host;dbname=$db_name;charset=utf8";
 

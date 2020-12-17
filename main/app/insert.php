@@ -1,5 +1,5 @@
 <?php
-require_once '../libs/init.php';
+require_once "../libs/init.php";
 use App\Request;
 $date = Request::get('date');
 global $date;
