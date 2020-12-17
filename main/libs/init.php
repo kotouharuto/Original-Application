@@ -7,8 +7,11 @@ require_once APPLICATION_DIR. 'vendor/autoload.php';
 require_once APPLICATION_DIR. 'libs/function.php';
 require_once APPLICATION_DIR. 'libs/classes/AuthUser.php';
 require_once APPLICATION_DIR. 'libs/classes/SessionManager.php';
+require_once APPLICATION_DIR. 'vendor/vlucas/phpdotenv/src/Dotenv.php';
 
 session_start();
+error_reporting(-1);
+ini_set('display_errors', 'On');
 
 use Dotenv\Dotenv;
 $dotenv = new Dotenv(APPLICATION_DIR);
