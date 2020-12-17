@@ -14,8 +14,8 @@
     </header>
 
     <form method="post" action="weight_chart.php">
-        <p>今日の日付</p><input type="text" name="date">
-        <p>体重</p><input type="text" name="weight"><br><br>
+        <p>今日の日付</p><input type="date" name="date">
+        <p>体重</p><input type="number" name="weight"><br><br>
         <input type="submit" value="送信">
     </form>
 
