@@ -11,7 +11,7 @@ require_once APPLICATION_DIR. 'vendor/vlucas/phpdotenv/src/Dotenv.php';
 
 session_start();
 error_reporting(-1);
-ini_set('display_errors', 'On');
+ini_set('display_errors', 'Off');
 
 use Dotenv\Dotenv;
 $dotenv = new Dotenv(APPLICATION_DIR);
