@@ -14,19 +14,17 @@
     </header>
 
     <form method="post" action="weight_chart.php">
-        <p>今日の日付</p><input type="date" name="date">
-        <p>体重</p><input type="number" step="0.001" name="weight"><br><br>
+        <p>今日の日付</p><input type="text" name="date">
+        <p>体重</p><input type="text" name="weight"><br><br>
         <input type="submit" value="送信">
     </form>
-</body>
-<?php
 
-require_once "../libs/init.php";
+<?php
+include('../libs/init.php');
 
 // DB接続
 $pdo = db_connect();
 $pdo->beginTransaction();
-ini_set('display_errors', 0);
 
 // 入力されたデータの受け取り
 $date = $_POST['date'];
@@ -55,7 +53,7 @@ if($date and $weight) {
             $pdo->rollback();
             $Exception->getMessage();
             echo $Exception;
-            // header("Location: weight_chart.php");
+            header("Location: weight_chart.php");
             exit();
         }
     }
@@ -86,10 +84,12 @@ $weight = trim($weight, ",");
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: [<?php echo $date ?>],
+            labels: [<?php echo $date ?>],//各棒の名前（name)
+            // labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'ほげ'],//各棒の名前（name)
             datasets: [{
                 label: '# of Votes',
-                data: [<?php echo $weight ?>],
+                data: [<?php echo $weight ?>],//各縦棒の高さ(値段)
+                // data: [12, 19, 3, 5, 2, 20],//各縦棒の高さ(値段)
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
