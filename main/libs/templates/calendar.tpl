@@ -4,10 +4,15 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>カレンダー</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
 <style>
+    header {
+        width: 100%;
+        height: 50px;
+    }
     .global-nav {
             display: none;
         }
@@ -119,7 +124,7 @@
         -o-flex-direction: row;
         -webkit-flex-direction: row;
         -ms-flex-direction: row;
-        background: #F5F5F5;
+        background: white;
         }
 
         /*ロゴやサイトタイトルをセンタリング*/
@@ -174,6 +179,26 @@
             margin-top: 40px;
             margin-top: 40px;
         }
+
+        .under-line {
+            weight: 100%;
+            height: 2px;
+            background: #dcdcdc;
+        }
+
+    @media (max-width: 700px) {
+        .under-line {
+            weight: 100%;
+            height: 2px;
+            background: #dcdcdc;
+        }
+
+        header {
+            width: 100%;
+            height: 50px;
+            background: white;
+    }
+    }
 }
 </style>
 </head>
@@ -199,6 +224,7 @@
     <div class="logo-area">カレンダー</div>
     </div>
 </header>
+<div class="under-line"></div>
 
 <h2 class="date_announce">メニューを追加したい日にちを選択してください</h2>
 {foreach $dates as $date}

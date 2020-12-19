@@ -25,6 +25,12 @@ crossorigin="anonymous">
     padding: 0;
     }
 
+    .under-line {
+        weight: 100%;
+        height: 2px;
+        background: #dcdcdc;
+    }
+
     .datetext {
         color: red;
     }
@@ -176,7 +182,7 @@ crossorigin="anonymous">
         header {
             width: 100%;
             height: 50px;
-            background: #F5F5F5;
+            background: white;
         }
 
         .global-nav {
@@ -190,6 +196,7 @@ crossorigin="anonymous">
 
         .nowtitle {
             display: none;
+            color: white;
         }
 
         .title {
@@ -310,10 +317,15 @@ crossorigin="anonymous">
             margin-bottom: 40px;
             background: rgb(206, 198, 198);
         }
+
+        .under-line {
+            weight: 100%;
+            height: 2px;
+            background: #dcdcdc;
+        }
 </style>
 
 </head>
-
 
 
 <body>
@@ -339,6 +351,7 @@ crossorigin="anonymous">
     <div class="logo-area">筋トレ</div>
     </div>
 </header>
+<div class="under-line"></div>
 
 <div id="wrapper">
 
