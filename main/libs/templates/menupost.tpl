@@ -341,6 +341,8 @@ crossorigin="anonymous">
             <ul>
                 <li class="mt-4"><a href="calendar.php">筋トレ</a></li>
                 <div class="humline"></div>
+                <li class="mt-4"><a href="weight_chart.php">体重管理</a></li>
+                <div class="humline"></div>
                 <li><a href="stopwatch.html">ストップウォッチ</a></li>
                 <div class="humline"></div>
                 <li><a href="logout.php">ログアウト</a></li>
