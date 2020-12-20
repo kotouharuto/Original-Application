@@ -174,7 +174,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="stopwatch.html">
+                <a href="stopwatch.php">
                   <i class="fas fa-history"></i>
                   <span>タイマー</span>
                 </a>
