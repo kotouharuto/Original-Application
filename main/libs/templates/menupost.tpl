@@ -25,6 +25,18 @@ crossorigin="anonymous">
     padding: 0;
     }
 
+    .greetbox {
+        background: navy;
+        width: 100%;
+        height: 50px;
+        margin-bottom: 30px;
+        text-align: center;
+        padding-top: 13px;
+        color: white;
+        font-weight: bold;
+        font-size: 17px;
+    }
+
     .under-line {
         weight: 100%;
         height: 2px;
@@ -151,6 +163,19 @@ crossorigin="anonymous">
         label.error {
             width: 90%;
         }
+
+        .greetbox {
+            background: navy;
+            width: 100%;
+            height: 50px;
+            margin-bottom: 30px;
+            text-align: center;
+            padding-top: 13px;
+            color: white;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
         input, textarea {
             width: 90%;
         }
@@ -338,12 +363,13 @@ crossorigin="anonymous">
         <label id="nav-open" for="nav-input"><span></span></label>
         <label class="nav-unshown" id="nav-close" for="nav-input"></label>
         <div id="nav-content">
+        <div class="greetbox">こんにちは、{$USERNAME}さん</div>
             <ul>
                 <li class="mt-4"><a href="calendar.php">筋トレ</a></li>
                 <div class="humline"></div>
                 <li class="mt-4"><a href="weight_chart.php">体重管理</a></li>
                 <div class="humline"></div>
-                <li><a href="stopwatch.html">ストップウォッチ</a></li>
+                <li><a href="stopwatch.php">ストップウォッチ</a></li>
                 <div class="humline"></div>
                 <li><a href="logout.php">ログアウト</a></li>
                 <div class="humline"></div> 

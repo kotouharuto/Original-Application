@@ -42,4 +42,5 @@ $smarty = getSmarty();
 $smarty->assign('menus', $menus);
 $smarty->assign('date', $date);
 $smarty->assign('datetext', $datetext);
+$smarty->assign('USERNAME', $_SESSION['USERNAME']);
 $smarty->display('menupost.tpl');

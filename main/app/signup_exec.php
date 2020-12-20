@@ -1,6 +1,6 @@
 <?php
     require_once "../libs/init.php";  
-    $username = $_POST['username'];
+    $_SESSION['username'] = $_POST['username'];
         
     //POSTのValidate
     if (!$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
@@ -27,7 +27,7 @@
         // データ挿入
     try {
         $pdo = db_connect();
-        Create_User($pdo, $username, $email, $password);
+        Create_User($pdo, $_SESSION['username'], $email, $password);
         header("Location: login.php");
     } catch(PDOExceptiomn $Exception) {
         $pdo->rollback();
