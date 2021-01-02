@@ -40,6 +40,20 @@ function fetchAllMenus($pdo, $user_id, $date)
     return $stmt->fetchAll();
 }
 
+//体重データ取得
+function fetchAllWeight($pdo, $user_id) {
+    global $stmt, $date, $weight;
+    $sql = "SELECT * FROM chart WHERE user_id = :user_id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue('user_id', $user_id, PDO::PARAM_INT);
+    $stmt->execute();
+    while($r = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $date = $date . '"'. $r['date'].'",';
+        $weight = $weight . '"'. $r['weight'] .'",';
+    }
+    return $stmt->fetchAll();
+}
+
 // メニュー挿入処理
 function INSERT($pdo, $date, $user_id, $menu, $num, $setnum) 
 {
@@ -52,6 +66,19 @@ function INSERT($pdo, $date, $user_id, $menu, $num, $setnum)
     $stmt->bindValue(':setnum', $setnum, PDO::PARAM_STR);
     $stmt->execute();
     $pdo->commit();
+}
+
+//体重データ挿入処理
+function INSERT2($pdo, $user_id, $date, $weight) {
+    $sql = "INSERT INTO chart(user_id, date, weight) VALUES (:user_id, :date, :weight)";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':user_id', $_SESSION['user_id'], PDO::PARAM_STR);
+    $stmt->bindValue(':date', $date, PDO::PARAM_STR);
+    $stmt->bindValue(':weight', $weight, PDO::PARAM_STR);
+    $stmt->execute();
+    $pdo->commit();
+    header("Location:weight_chart.php");
+    exit();
 }
 
 //メニュー削除
